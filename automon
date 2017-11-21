@@ -1,0 +1,338 @@
+#!/usr/bin/python
+
+import datetime
+import os
+import os.path
+import re
+import signal
+import subprocess
+import sys
+import time
+import uuid
+
+__author__ = "Gena Makhomed"
+__contact__ = "https://github.com/makhomed/automon"
+__license__ = "GPLv3"
+__version__ = "0.0.1"
+__date__ = "2017-11-21"
+
+
+class Config(object):
+
+    def __init__(self):
+        self.configuration_file_name = "/opt/automon/automon.conf"
+        self.ignore_directory_name = "/opt/automon/ignore.d"
+        self.local_ignore_directory_name = "/opt/automon/local-ignore.d"
+        self.alert_program = "/opt/automon/bin/alert-via-telegram"
+        self.var_files_max_age = 30 * 24 * 60 * 60  # 30 days
+        self.delay = 600
+        self.log = "/var/log/messages"
+        self.hosts = set()
+        self.logfile = dict()
+        self.description = dict()
+        self.ignore_patterns = set()
+        self.host_ignore_patterns = dict()
+        self.compiled_ignore_patterns = set()
+        self.compiled_host_ignore_patterns = dict()
+
+        self.read_configuration_file()
+        self.read_ignore_patterns()
+        self.compile_ignore_patterns()
+
+    def read_configuration_file(self):
+        if not os.path.isfile(self.configuration_file_name):
+            sys.exit("configuration file '%s' not found" % self.configuration_file_name)
+        with open(self.configuration_file_name) as configuration_file:
+            lines = configuration_file.read().strip().split('\n')
+        for line in lines:
+            comment_start = line.find('#')
+            if comment_start > -1:
+                line = line[:comment_start]
+            line = line.strip()
+            if not line:
+                continue
+            line = line.replace("\t", "\x20")
+            name, value = line.split(None, 1)
+            if name == "alert":
+                self.alert_program = value
+            if name == "delay":
+                self.delay = int(value)
+            elif name == "log":
+                if " " in value:
+                    sys.exit("bad log '%s', spaces not allowed" % value)
+                self.log = value
+            elif name == "host":
+                if " " in value:
+                    host, description = value.split(None, 1)
+                else:
+                    host = value
+                    description = None
+                if host in self.hosts:
+                    sys.exit("bad config, host '%s' already defined" % host)
+                self.hosts.add(host)
+                self.logfile[host] = self.log
+                self.description[host] = description
+            else:
+                sys.exit("invalid config directive '%s'" % name)
+        if self.delay < 60:
+            sys.exit("bad config, 'delay' must be > 60, '%d' given", self.delay)
+        if not self.hosts:
+            sys.exit("bad config, at least one 'host' directive must be defined")
+        if not os.path.isfile(self.alert_program):
+            sys.exit("bad config, alert program '%s' not exists" % self.alert_program)
+
+    def compile_ignore_patterns(self):
+        for ignore_pattern in self.ignore_patterns:
+            try:
+                pattern = re.compile(ignore_pattern)
+                self.compiled_ignore_patterns.add(pattern)
+            except sre_constants.error as ex:
+                print "ERROR: bad pattern '%s'" % ignore_pattern
+        del self.ignore_patterns
+        for host in self.hosts:
+            self.compiled_host_ignore_patterns[host] = set()
+            for ignore_pattern in self.host_ignore_patterns[host]:
+                pattern = re.compile(ignore_pattern)
+                self.compiled_host_ignore_patterns[host].add(pattern)
+        del self.host_ignore_patterns
+
+    def read_ignore_patterns(self):
+        self.ignore_patterns = self.read_ignore_patterns_from_directory(self.ignore_directory_name)
+        local_ignore_patterns = self.read_ignore_patterns_from_directory(self.local_ignore_directory_name)
+        for local_ignore_pattern in local_ignore_patterns:
+            if local_ignore_pattern in self.ignore_patterns:
+                print "WARNING: pattern '%s' already defined" % local_ignore_pattern
+            else:
+                self.ignore_patterns.add(local_ignore_pattern)
+        for host in self.hosts:
+            host_local_ignore_directory_name = os.path.join(self.local_ignore_directory_name, host + ".d")
+            host_local_ignore_patterns = self.read_ignore_patterns_from_directory(host_local_ignore_directory_name)
+            clean_host_local_ignore_patterns = set()
+            for host_local_ignore_pattern in host_local_ignore_patterns:
+                if host_local_ignore_pattern in self.ignore_patterns:
+                    print "WARNING: pattern '%s' already defined" % local_ignore_pattern
+                else:
+                    clean_host_local_ignore_patterns.add(host_local_ignore_pattern)
+            self.host_ignore_patterns[host] = clean_host_local_ignore_patterns
+
+    def read_ignore_patterns_from_directory(self, ignore_directory_name):
+        if not os.path.isdir(ignore_directory_name):
+            return set()
+        ignore_file_names = list()
+        for entry in os.listdir(ignore_directory_name):
+            full_name = os.path.join(ignore_directory_name, entry)
+            if os.path.isfile(full_name):
+                ignore_file_names.append(full_name)
+        directory_ignore_patterns = set()
+        for ignore_file_name in ignore_file_names:
+            file_ignore_patterns = self.read_ignore_patterns_from_file(ignore_file_name)
+            for ignore_pattern in file_ignore_patterns:
+                if ignore_pattern in directory_ignore_patterns:
+                    print "WARNING: pattern '%s' already defined" % ignore_pattern
+                else:
+                    directory_ignore_patterns.add(ignore_pattern)
+        return directory_ignore_patterns
+
+    def read_ignore_patterns_from_file(self, ignore_file_name):
+        file_ignore_patterns = set()
+        with open(ignore_file_name) as ignore_file:
+            lines = ignore_file.read().strip().split('\n')
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                if line[0] == "#":
+                    continue
+                ignore_pattern = self.transform_pattern(line)
+                if ignore_pattern in file_ignore_patterns:
+                    print "WARNING: pattern '%s' already defined" % ignore_pattern
+                else:
+                    file_ignore_patterns.add(ignore_pattern)
+        return file_ignore_patterns
+
+    def transform_pattern(self, ignore_pattern):  # pylint: disable=no-self-use
+        ignore_pattern = ignore_pattern.strip()
+        if ignore_pattern[0] != '^':
+            ignore_pattern = '^' + ignore_pattern
+        if ignore_pattern[-1] != '$':
+            ignore_pattern = ignore_pattern + '$'
+        return ignore_pattern
+
+
+class Process(object):
+
+    def __init__(self, *args):
+        self.args = args
+        process = subprocess.Popen(args, stdin=None, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, cwd='/')
+        self.stdout, self.stderr = process.communicate()
+        self.returncode = process.returncode
+
+    def failed(self):
+        return self.returncode != 0
+
+    def print_info(self, message):
+        print message + ": Process(", self.args, ") failed"
+        print "returncode:", self.returncode
+        print "stdout:", self.stdout
+        print "stderr:", self.stderr
+
+
+class LogMon(object):
+
+    def __init__(self, daemon):
+        self.daemon = daemon
+
+    def exit_gracefully(self, dummy_signum, dummy_frame):
+        self.exit = True
+
+    def set_signal_handler(self):
+        self.exit = False
+        signal.signal(signal.SIGINT, self.exit_gracefully)
+        signal.signal(signal.SIGTERM, self.exit_gracefully)
+
+    def check_exit(self):
+        if self.exit:
+            sys.exit(0)
+
+    def delay(self):
+        if self.daemon:
+            counter = self.config.delay
+            while counter > 0 and not self.exit:
+                time.sleep(1)
+                counter -= 1
+        else:
+            self.exit = True
+
+    def run(self):
+        self.set_signal_handler()
+        while not self.exit:
+            self.config = Config()
+            self.check_exit()
+            for host in self.config.hosts:
+                self.check_messages(host)
+                self.check_exit()
+            self.delay()
+
+    def read_seen_messages(self, host):
+        seen_messages_file_name = "/opt/automon/var/-var-log-messages-%s" % host
+        if not os.path.isfile(seen_messages_file_name):
+            return None
+        with open(seen_messages_file_name) as seen_messages_file:
+            lines = seen_messages_file.read().strip().split('\n')
+        return lines
+
+    def atomic_write_file(self, filename, content):
+        old_filename = filename
+        new_filename = old_filename + '.tmp.' + uuid.uuid4().hex + '.tmp'
+        new_file = open(new_filename, 'w')
+        new_file.write(content)
+        new_file.close()
+        os.rename(new_filename, old_filename)
+
+    def write_seen_messages(self, host, content):
+        seen_messages_file_name = "/opt/automon/var/-var-log-messages-%s" % host
+        self.atomic_write_file(seen_messages_file_name, content)
+
+    def seen_messages_generator(self, seen_messages):
+        for seen_message in seen_messages:
+            yield seen_message
+        while True:
+            yield None
+
+    def get_new_messages(self, messages, seen_messages):
+        if not seen_messages:
+            return messages
+        new_messages = list()
+        seen_messages_generator = self.seen_messages_generator(seen_messages)
+        for message in messages:
+            seen_message = seen_messages_generator.next()
+            if message == seen_message:
+                continue
+            new_messages.append(message)
+        return new_messages
+
+    def delete_old_var_files(self):
+        var_files = os.listdir("/opt/automon/var")
+        for var_file in var_files:
+            full_name = os.path.join("/opt/automon/var", var_file)
+            mtime = os.path.getmtime(full_name)
+            now = time.time()
+            age = now - mtime
+            if age > self.config.var_files_max_age:
+                os.unlink(full_name)
+
+    def alert_messages(self, host, lines):
+        now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        alert_file_name = "/opt/automon/var/%s-messages-alert-from-%s.txt" % (now, host)
+        content = "\n".join(lines) + "\n"
+        self.atomic_write_file(alert_file_name, content)
+        process = Process(self.config.alert_program, alert_file_name)
+        if process.failed():
+            process.print_info("error")
+
+    def check_messages(self, host):
+        alert = list()
+        logfile = self.config.logfile[host]
+        description = self.config.description[host]
+        if host == "localhost" or host == "127.0.0.1":
+            process = Process("/bin/cat", logfile)
+        else:
+            process = Process("/usr/bin/ssh", host, "cat", logfile)
+        if process.failed():
+            print "can't read %s from host %s" % (logfile, host)
+            process.print_info("error")
+        messages_content = process.stdout
+        messages = messages_content.strip().split("\n")
+        seen_messages = self.read_seen_messages(host)
+        new_messages = self.get_new_messages(messages, seen_messages)
+        line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
+        for line in new_messages:
+            line = line.strip()
+            if not line:
+                continue
+            match = line_re.match(line)
+            if not match:
+                alert.append("unmatched line: '%s'" % line)
+                continue
+            rest = match.group("rest")
+            line_ignored = False
+            for pattern in self.config.compiled_ignore_patterns:
+                if pattern.match(rest):
+                    line_ignored = True
+                    break
+            if not line_ignored:
+                for pattern in self.config.compiled_host_ignore_patterns[host]:
+                    if pattern.match(rest):
+                        line_ignored = True
+                        break
+            if not line_ignored:
+                alert.append(line)
+        if alert:
+            if description:
+                hostline1 = "%s alert from %s (%s)" % (logfile, host, description)
+            else:
+                hostline1 = "%s alert from %s" % (logfile, host)
+            hostline2 = "-" * len(hostline1)
+            alert = [hostline1, hostline2] + alert
+            if self.daemon is not None:
+                self.alert_messages(host, alert)
+            else:
+                print "\n".join(alert) + "\n"
+        if self.daemon is not None:
+            self.write_seen_messages(host, messages_content)
+        self.delete_old_var_files()
+
+def main():
+    if sys.argv[1:] == ["daemon"]:
+        daemon = True
+    elif sys.argv[1:] == ["once"]:
+        daemon = False
+    elif sys.argv[1:] == []:
+        daemon = None
+    else:
+        sys.exit("unexpected command line arguments: '%s'" % " ".join(sys.argv[1:]))
+    LogMon(daemon).run()
+
+
+if __name__ == "__main__":
+    main()

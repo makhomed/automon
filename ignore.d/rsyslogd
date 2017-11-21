@@ -1,0 +1,4 @@
+
+rsyslogd: \[origin software="rsyslogd" swVersion="\d+\.\d+\.\d+" x-pid="\d+" x-info="http://www.rsyslog.com"\] rsyslogd was HUPed
+rsyslogd: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsyslog\.com/e/0 \]
+

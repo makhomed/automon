@@ -1,0 +1,26 @@
+
+systemd: Stopping NSD DNS Server\.\.\.
+systemd: Started NSD DNS Server\.
+systemd: Starting NSD DNS Server\.\.\.
+
+nsd\[\d+\]: signal received, shutting down\.\.\.
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: warning: signal received, shutting down\.\.\.
+nsd\[\d+\]: nsd starting \(NSD \d+\.\d+\.\d+\)
+nsd\[\d+\]: setup SSL certificates
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: notice: nsd starting \(NSD \d+\.\d+\.\d+\)
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: setup SSL certificates
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: notice: nsd started \(NSD \d+\.\d+\.\d+\), pid \d+
+nsd\[\d+\]: nsd started \(NSD \d+\.\d+\.\d+\), pid \d+
+
+nsd\[\d+\]: axfr for \S+\. from \S+
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: axfr for \S+\. from \S+
+
+nsd\[\d+\]: zone \S+ read with success
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: zone \S+ read with success
+
+nsd\[\d+\]: axfr for \S+\. from \S+ refused, no acl matches
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: axfr for \S+\. from \S+ refused, no acl matches
+
+nsd\[\d+\]: zone \S+ serial \d+ is updated to \d+\.
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: zone \S+ serial \d+ is updated to \d+\.
+

@@ -1,0 +1,2 @@
+yum\[\d+\]: Installed: \S+
+yum\[\d+\]: Updated: \S+

@@ -1,0 +1,11 @@
+
+kernel: \[\d+\.\d+\] CT: \d+: stopped
+kernel: \[\d+\.\d+\] CT: \d+: started
+
+kernel: \[\d+\.\d+\] EXT4-fs \(ploop\d+p1\): mounted filesystem with ordered data mode. Opts:
+kernel: \[\d+\.\d+\] EXT4-fs \(ploop\d+p1\): loaded balloon from 12 \(\d+ blocks\)
+kernel: \[\d+\.\d+\]  ploop\d+: p1
+
+kernel: \[\d+.\d+\] EXT4-fs \(ploop\d+p1\): write access unavailable, skipping orphan cleanup
+kernel: \[\d+.\d+\] EXT4-fs \(ploop\d+p1\): recovery complete
+

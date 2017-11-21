@@ -2,5 +2,5 @@
 automon
 =======
 
-/var/log/messages monitoring on multiple servers
+/var/log/messages monitoring tool
 

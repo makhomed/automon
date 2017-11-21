@@ -1,0 +1,5 @@
+
+dhclient\[\d+\]: DHCPREQUEST on \S+ to \S+ port 67 \(xid=0x\S+\)
+dhclient\[\d+\]: DHCPACK from \S+ \(xid=0x\S+\)
+dhclient\[\d+\]: bound to \S+ -- renewal in \d+ seconds\.
+
