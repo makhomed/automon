@@ -1,12 +1,4 @@
 
-systemd: Stopping nginx - high performance web server\.\.\.
-systemd: Stopped nginx - high performance web server\.
-
-systemd: Starting nginx - high performance web server\.\.\.
-systemd: Started nginx - high performance web server\.
-
-systemd: Reloaded nginx - high performance web server\.
-
 nginx: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: nginx: configuration file /etc/nginx/nginx.conf test is successful
 

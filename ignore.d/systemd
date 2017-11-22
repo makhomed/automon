@@ -1,4 +1,13 @@
 
+systemd: Stopping .*\.\.\.
+systemd: Stopped .*\.
+
+systemd: Starting .*\.\.\.
+systemd: Started .*\.
+
+systemd: Reloaded .*\.
+systemd: Reloading\.
+
 systemd: Started Session \d+ of user root\.
 systemd: Starting Session \d+ of user root\.
 
@@ -11,12 +20,4 @@ systemd: Started Session \d+ of user \S+\.
 systemd: Starting Session \d+ of user \S+\.
 systemd: Removed slice User Slice of \S+\.
 systemd: Stopping User Slice of \S+\.
-
-systemd: Starting Cleanup of Temporary Directories\.\.\.
-systemd: Started Cleanup of Temporary Directories\.
-
-systemd: Starting Hostname Service\.\.\.
-systemd: Started Hostname Service\.
-
-systemd: Reloading\.
 

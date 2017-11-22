@@ -1,5 +1,0 @@
-
-systemd: Stopping Dovecot IMAP/POP3 email server\.\.\.
-systemd: Starting Dovecot IMAP/POP3 email server\.\.\.
-systemd: Started Dovecot IMAP/POP3 email server\.
-
