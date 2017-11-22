@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import argparse
 import datetime
 import os
 import os.path
@@ -19,8 +20,8 @@ __date__ = "2017-11-21"
 
 class Config(object):
 
-    def __init__(self):
-        self.configuration_file_name = "/opt/automon/automon.conf"
+    def __init__(self, configuration_file_name):
+        self.configuration_file_name = configuration_file_name
         self.ignore_directory_name = "/opt/automon/ignore.d"
         self.local_ignore_directory_name = "/opt/automon/local-ignore.d"
         self.alert_program = "/opt/automon/bin/alert-via-telegram"
@@ -179,8 +180,9 @@ class Process(object):
 
 class AutoMon(object):
 
-    def __init__(self, daemon):
-        self.daemon = daemon
+    def __init__(self, args):
+        self.configuration_file_name = args.config
+        self.mode = args.mode
 
     def exit_gracefully(self, dummy_signum, dummy_frame):
         self.exit = True
@@ -195,7 +197,7 @@ class AutoMon(object):
             sys.exit(0)
 
     def delay(self):
-        if self.daemon:
+        if self.mode == "daemon":
             counter = self.config.delay
             while counter > 0 and not self.exit:
                 time.sleep(1)
@@ -206,7 +208,7 @@ class AutoMon(object):
     def run(self):
         self.set_signal_handler()
         while not self.exit:
-            self.config = Config()
+            self.config = Config(self.configuration_file_name)
             self.check_exit()
             for host in self.config.hosts:
                 self.check_messages(host)
@@ -279,7 +281,7 @@ class AutoMon(object):
                 hostname, port = host.rsplit(":", 1)
             else:
                 hostname, port = host, "22"
-            process = Process("/usr/bin/ssh", "-p", port, hostname, "cat", logfile)
+            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/cat", logfile)
         if process.failed():
             print "can't read %s from host %s" % (logfile, host)
             process.print_info("error")
@@ -324,24 +326,20 @@ class AutoMon(object):
                 hostline1 = "%s alert from %s" % (logfile, host)
             hostline2 = "-" * len(hostline1)
             alert = [hostline1, hostline2] + alert
-            if self.daemon is not None:
+            if self.mode != "debug":
                 self.alert_messages(host, alert)
             else:
                 print "\n".join(alert) + "\n"
-        if self.daemon is not None:
+        if self.mode != "debug":
             self.write_seen_messages(host, messages_content)
         self.delete_old_var_files()
 
 def main():
-    if sys.argv[1:] == ["daemon"]:
-        daemon = True
-    elif sys.argv[1:] == ["once"]:
-        daemon = False
-    elif sys.argv[1:] == []:
-        daemon = None
-    else:
-        sys.exit("unexpected command line arguments: '%s'" % " ".join(sys.argv[1:]))
-    AutoMon(daemon).run()
+    parser = argparse.ArgumentParser(prog="automon")
+    parser.add_argument("-c", required=False, metavar="CONFIG", dest="config", default="/opt/automon/automon.conf", help="configuration file")
+    parser.add_argument("mode", nargs="?", default="debug", choices=["daemon", "once", "debug"], help="mode")
+    args = parser.parse_args()
+    AutoMon(args).run()
 
 
 if __name__ == "__main__":
