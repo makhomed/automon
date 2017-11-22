@@ -183,6 +183,8 @@ class AutoMon(object):
     def __init__(self, args):
         self.configuration_file_name = args.config
         self.mode = args.mode
+        if not os.path.isdir("/opt/automon/var"):
+            os.mkdir("/opt/automon/var")
 
     def exit_gracefully(self, dummy_signum, dummy_frame):
         self.exit = True
