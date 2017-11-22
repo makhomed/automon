@@ -1,0 +1,5 @@
+
+journal: Journal started
+journal: Journal stopped
+journal: Runtime journal is using \d+\.\d+.*
+

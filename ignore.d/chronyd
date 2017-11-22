@@ -2,3 +2,6 @@
 chronyd\[\d+\]: Selected source \S+
 chronyd\[\d+\]: Source \S+ replaced with \S+
 
+chronyd\[\d+\]: chronyd version \d+\.\d+ starting \(.*\)
+chronyd\[\d+\]: Frequency \d+\.\d+ \+/- \d+\.\d+ ppm read from /var/lib/chrony/drift
+

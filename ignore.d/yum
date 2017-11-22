@@ -1,2 +1,5 @@
+
 yum\[\d+\]: Installed: \S+
 yum\[\d+\]: Updated: \S+
+yum\[\d+\]: Erased: \S+
+

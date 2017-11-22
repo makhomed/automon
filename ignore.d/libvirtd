@@ -1,0 +1,8 @@
+
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\+\d\d\d\d: \d+: info : libvirt version: \d+\.\d+\.\d+, package: .*
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\+\d\d\d\d: \d+: info : hostname: .*
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\+\d\d\d\d: \d+: warning : qemuDomainObjTaint:\d+ : Domain id=\d+ name='.*' uuid=\S+ is tainted: host-cpu
+
+libvirt-guests.sh: Resuming guests on default URI...
+libvirt-guests.sh: Resuming guest .*: already active
+

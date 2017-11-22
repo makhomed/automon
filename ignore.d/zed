@@ -1,3 +1,7 @@
 
-zed: eid=\d+ class=history_event pool_guid=.*
+zed: ZFS Event Daemon \d+\.\d+\.\d+-\d+ \(PID \d+\)
+zed: Processing events since eid=\d+
+zed: eid=\d+ class=history_event pool_guid=\S+
+zed: eid=\d+ class=config_sync pool_guid=\S+
+zed: eid=\d+ class=pool_import pool_guid=\S+
 

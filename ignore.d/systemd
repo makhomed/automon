@@ -1,23 +1,70 @@
 
-systemd: Stopping .*\.\.\.
-systemd: Stopped .*\.
+systemd(\[\d+\])?: systemd \d+ running in system mode\. .*
+systemd(\[\d+\])?: Detected architecture \S+\.
+systemd(\[\d+\])?: Inserted module '.*'
+systemd(\[\d+\])?: Listening on .*
+systemd(\[\d+\])?: Set hostname to .*
+systemd(\[\d+\])?: Running in initial RAM disk.
+systemd(\[\d+\])?: Created slice .* Slice.
 
-systemd: Starting .*\.\.\.
-systemd: Started .*\.
+systemd: Stopping .*
+systemd: Stopped .*
 
-systemd: Reloaded .*\.
+systemd(\[\d+\])?: Starting .*
+systemd(\[\d+\])?: Started .*
+systemd(\[\d+\])?: Reached target .*
+
+systemd: Reloaded .*
 systemd: Reloading\.
+systemd: Reexecuting\.
+
+systemd: Found device .*
+systemd: Mounting .*
+systemd: Mounted .*
+systemd: Unmounting .*
 
 systemd: Started Session \d+ of user root\.
 systemd: Starting Session \d+ of user root\.
 
-systemd-logind: New session \d+ of user \S+\.
-systemd-logind: Removed session \d+\.
-
 systemd: Created slice User Slice of \S+\.
 systemd: Starting User Slice of \S+\.
+
 systemd: Started Session \d+ of user \S+\.
 systemd: Starting Session \d+ of user \S+\.
 systemd: Removed slice User Slice of \S+\.
 systemd: Stopping User Slice of \S+\.
+
+systemd: Closed udev Control Socket\.
+systemd: Stopping udev Control Socket\.
+systemd: Closed udev Kernel Socket\.
+systemd: Stopping udev Kernel Socket\.
+systemd: Listening on udev Control Socket\.
+systemd: Starting udev Control Socket\.
+systemd: Listening on udev Kernel Socket\.
+systemd: Starting udev Kernel Socket\.
+
+systemd: Switching root.
+systemd: Created slice .*
+systemd: Received SIGRTMIN\+\d+ from PID \d+ \(plymouthd\).
+
+systemd-fsck: /sbin/fsck.xfs: XFS file system.
+
+systemd-journald\[\d+\]: Received SIGTERM from PID 1 \(systemd\).
+
+systemd-logind: New session \d+ of user \S+\.
+systemd-logind: Removed session \d+\.
+
+systemd-logind: Watching system buttons on /dev/input/event\d+ \(Power Button\)
+systemd-logind: New seat seat\d+\.
+
+systemd-udevd: starting version \d+
+
+systemd-udevd: could not find module by name='ipmi_si'
+systemd-udevd: could not find module by name='ipmi_devintf'
+systemd-udevd: could not find module by name='ipmi_msghandler'
+
+systemd-machined: New machine .*
+
+systemd: Startup finished in \d+\.\d+s \(kernel\) \+ \d+\.\d+s \(initrd\) \+ \d+min \d+\.\d+s \(userspace\) = \d+min \d+\.\d+s\.
+systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
 

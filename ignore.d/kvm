@@ -1,0 +1,7 @@
+
+kernel: kvm \[\d+\]: vcpu\d+ unhandled rdmsr: \S+
+kernel: kvm_get_msr_common: \d+ callbacks suppressed
+
+kvm: \d+ guest now active
+kvm: \d+ guests now active
+

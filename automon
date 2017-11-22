@@ -87,7 +87,7 @@ class Config(object):
             try:
                 pattern = re.compile(ignore_pattern)
                 self.compiled_ignore_patterns.add(pattern)
-            except sre_constants.error as ex:
+            except re.error:
                 print "ERROR: bad pattern '%s'" % ignore_pattern
         del self.ignore_patterns
         for host in self.hosts:
@@ -272,28 +272,60 @@ class AutoMon(object):
         if process.failed():
             process.print_info("error")
 
-    def read_messages(self, host):
-        logfile = self.config.logfile[host]
+    def read_file(self, host, file_name):
         if host == "localhost" or host == "127.0.0.1":
-            process = Process("/bin/cat", logfile)
+            process = Process("/bin/cat", file_name)
         else:
             if ":" in host:
                 hostname, port = host.rsplit(":", 1)
             else:
                 hostname, port = host, "22"
-            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/cat", logfile)
+            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/cat", file_name)
         if process.failed():
-            print "can't read %s from host %s" % (logfile, host)
+            print "can't read %s from host %s" % (file_name, host)
             process.print_info("error")
-            return "", list()
-        messages_content = process.stdout
-        messages = messages_content.strip().split("\n")
-        return messages_content, messages
+            return ""
+        return process.stdout
+
+    def read_messages(self, host):
+        dmesg_content = self.read_file(host, "/var/log/dmesg")
+        dmesg_lines = set()
+        dmesg_re = re.compile(r"^\[\s*\d+\.\d+\] (?P<rest>.*)$")
+        for line in dmesg_content.strip().split("\n"):
+            line = line.strip()
+            if not line:
+                continue
+            match = dmesg_re.match(line)
+            if match:
+                rest = match.group("rest")
+                dmesg_line = "kernel: " + rest
+                dmesg_lines.add(dmesg_line)
+                if rest.startswith(" "):
+                    dmesg_line2 = "kernel: " + rest[1:]
+                    dmesg_lines.add(dmesg_line2)
+            else:
+                print "WARNING: unmatched dmesg line '%s'" % line
+        logfile = self.config.logfile[host]
+        messages_content = self.read_file(host, logfile)
+        all_messages = messages_content.strip().split("\n")
+        messages = list()
+        line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
+        for line in all_messages:
+            line = line.strip()
+            if not line:
+                continue
+            match = line_re.match(line)
+            if match:
+                rest = match.group("rest")
+                if rest in dmesg_lines:
+                    continue
+            messages.append(line)
+        return messages
 
     def check_messages(self, host):
         logfile = self.config.logfile[host]
         description = self.config.description[host]
-        messages_content, messages = self.read_messages(host)
+        messages = self.read_messages(host)
         seen_messages = self.read_seen_messages(host)
         new_messages = self.get_new_messages(messages, seen_messages)
         line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
@@ -331,7 +363,7 @@ class AutoMon(object):
             else:
                 print "\n".join(alert) + "\n"
         if self.mode != "debug":
-            self.write_seen_messages(host, messages_content)
+            self.write_seen_messages(host, "\n".join(messages) + "\n")
         self.delete_old_var_files()
 
 def main():

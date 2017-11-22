@@ -1,0 +1,22 @@
+
+x11vnc: The VNC desktop is:\s+\S+
+x11vnc: PORT=\d+
+x11vnc: trying N=\d+ ...
+x11vnc: redir_daemon=
+x11vnc: /usr/bin/Xvfb :\d+ -screen \d+ \d+x\d+x\d+ -cc \d+ -nolisten tcp -auth .*
+x11vnc: /usr/bin/startxfce4: X server already running on display :\d+
+x11vnc: generating cookie with syscall
+
+x11vnc: xfce4-session: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.
+x11vnc: xfwm4: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.\d+\.
+x11vnc: xfsettingsd: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.\d+\.
+journal: ICE I/O Error
+x11vnc: extra\[\d+\] signal: -1
+journal: Disconnected from session manager.
+systemd: x11vnc.service: main process exited, code=exited, status=4/NOPERMISSION
+x11vnc: xfdesktop: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.\d+\.
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d.\d+\+\d+: \d+: error : virNetSocketReadWire:\d+ : End of file while reading data: Input/output error
+systemd: Unit x11vnc.service entered failed state\.
+systemd: x11vnc.service failed.
+systemd: x11vnc.service holdoff time over, scheduling restart.
+

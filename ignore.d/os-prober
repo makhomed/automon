@@ -1,0 +1,19 @@
+
+root: os-prober: debug: .*
+
+macosx-prober: debug: .*
+
+root: 05efi: debug: .*
+
+root: 10freedos: debug: .*
+
+root: 10qnx: debug: .*
+
+root: 20microsoft: debug: .*
+
+root: 30utility: debug: .*
+
+root: 83haiku: debug: .*
+
+root: 50mounted-tests: debug: .*
+

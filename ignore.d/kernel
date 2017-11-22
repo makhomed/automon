@@ -1,0 +1,36 @@
+
+kernel: gran_size: \d+K #011chunk_size: \d+G #011num_reg: \d+  #011lose cover RAM: \d+G
+kernel: #011RCU restricting CPUs from NR_CPUS=\d+ to nr_cpu_ids=\d+\.
+
+kernel: IPv6: ADDRCONF\(NETDEV_UP\): \S+1: link is not ready
+kernel: IPv6: ADDRCONF\(NETDEV_CHANGE\): \S+: link becomes ready
+
+kernel: igb \d+:\d+:\d+\.\d+ \S+: igb: \S+ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+
+kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default\. Update your scripts to load br_netfilter if you need this\.
+
+kernel: ip_tables: \(C\) \d+-\d+ Netfilter Core Team
+kernel: ip6_tables: \(C\) \d+-\d+ Netfilter Core Team
+kernel: Ebtables v\d+\.\d+ registered
+
+kernel: nf_conntrack version \d+\.\d+\.\d+ \(\d+ buckets, \d+ max\)
+
+kernel: tun: Universal TUN/TAP device driver, \d+\.\d+
+kernel: tun: \(C\) \d+-\d+ Max Krasnyansky \<maxk\@qualcomm\.com\>
+
+kernel: \S+: port \d+\(\S+\) entered blocking state
+kernel: \S+: port \d+\(\S+\) entered disabled state
+kernel: \S+: port \d+\(\S+\) entered forwarding state
+kernel: device \S+ entered promiscuous mode
+
+kernel: Btrfs loaded, crc32c=crc32c-intel
+kernel: fuse init \(API version \d+\.\d+\)
+
+kernel: xor: automatically using best checksumming function:
+kernel: \s+avx\s+ : \d+\.\d+ MB/sec
+kernel: raid6: sse2x1   gen\(\)\s+\d+ MB/s
+kernel: raid6: sse2x2   gen\(\)\s+\d+ MB/s
+kernel: raid6: sse2x4   gen\(\)\s+\d+ MB/s
+kernel: raid6: using algorithm sse2x4 gen\(\) \(\d+ MB/s\)
+kernel: raid6: using ssse3x2 recovery algorithm
+
