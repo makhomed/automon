@@ -177,7 +177,7 @@ class Process(object):
         print "stderr:", self.stderr
 
 
-class LogMon(object):
+class AutoMon(object):
 
     def __init__(self, daemon):
         self.daemon = daemon
@@ -270,22 +270,32 @@ class LogMon(object):
         if process.failed():
             process.print_info("error")
 
-    def check_messages(self, host):
-        alert = list()
+    def read_messages(self, host):
         logfile = self.config.logfile[host]
-        description = self.config.description[host]
         if host == "localhost" or host == "127.0.0.1":
             process = Process("/bin/cat", logfile)
         else:
-            process = Process("/usr/bin/ssh", host, "cat", logfile)
+            if ":" in host:
+                hostname, port = host.rsplit(":", 1)
+            else:
+                hostname, port = host, "22"
+            process = Process("/usr/bin/ssh", "-p", port, hostname, "cat", logfile)
         if process.failed():
             print "can't read %s from host %s" % (logfile, host)
             process.print_info("error")
+            return "", list()
         messages_content = process.stdout
         messages = messages_content.strip().split("\n")
+        return messages_content, messages
+
+    def check_messages(self, host):
+        logfile = self.config.logfile[host]
+        description = self.config.description[host]
+        messages_content, messages = self.read_messages(host)
         seen_messages = self.read_seen_messages(host)
         new_messages = self.get_new_messages(messages, seen_messages)
         line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
+        alert = list()
         for line in new_messages:
             line = line.strip()
             if not line:
@@ -331,7 +341,7 @@ def main():
         daemon = None
     else:
         sys.exit("unexpected command line arguments: '%s'" % " ".join(sys.argv[1:]))
-    LogMon(daemon).run()
+    AutoMon(daemon).run()
 
 
 if __name__ == "__main__":
