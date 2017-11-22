@@ -1,0 +1,50 @@
+
+kernel: \[\s*\d+\.\d+\] CT: \d+: stopped
+kernel: \[\s*\d+\.\d+\] CT: \d+: started
+
+kernel: \[\s*\d+\.\d+\] ploop_dev: module loaded
+kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): mounted filesystem with ordered data mode. Opts:
+kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): loaded balloon from 12 \(\d+ blocks\)
+kernel: \[\s*\d+\.\d+\]  ploop\d+:.*
+kernel: \[\s*\d+\.\d+\]  p1
+kernel: \[\s*\d+\.\d+\]
+
+kernel: \[\s*\d+.\d+\] EXT4-fs \(ploop\d+p1\): write access unavailable, skipping orphan cleanup
+kernel: \[\s*\d+.\d+\] EXT4-fs \(ploop\d+p1\): recovery complete
+
+kernel: \[\s*\d+.\d+\] FS-Cache: Netfs 'nfs' registered for caching
+kernel: \[\s*\d+.\d+\] FS-Cache: Netfs 'nfs' unregistered from caching
+
+kernel: \[\s*\d+.\d+\] FS-Cache: Loaded
+kernel: \[\s*\d+.\d+\] FS-Cache: Unloaded
+
+kernel: \[\s*\d+.\d+\] RPC: Unregistered .* transport module.
+kernel: \[\s*\d+.\d+\] RPC: Registered .* transport module.
+
+kernel: \[\s*\d+.\d+\] Slow work thread pool: Shutting down
+kernel: \[\s*\d+.\d+\] Slow work thread pool: Shut down complete
+kernel: \[\s*\d+.\d+\] Slow work thread pool: Starting up
+kernel: \[\s*\d+.\d+\] Slow work thread pool: Ready
+
+kernel: \[\s*\d+.\d+\] NFS: Registering the id_resolver key type
+kernel: \[\s*\d+.\d+\] Key type id_resolver registered
+
+kernel: \[\s*\d+.\d+\] Key type id_resolver unregistered
+
+kernel: \[\s*\d+.\d+\] type=\d+ audit\(.*\): audit_pid=\d+ old=\d+ auid=\d+ ses=\d+ res=\d+
+kernel: \[\s*\d+.\d+\] type=\d+ audit\(.*\): audit_enabled=\d+ old=\d+ auid=\d+ ses=\d+ res=\d+
+
+kernel: \[\s*\d+.\d+\] NET: Registered protocol family \d+
+kernel: \[\s*\d+.\d+\] ip6_tables: \(C\) \d+-\d+ Netfilter Core Team
+kernel: \[\s*\d+.\d+\] ip_tables: \(C\) \d+-\d+ Netfilter Core Team
+kernel: \[\s*\d+.\d+\] tun: Universal TUN/TAP device driver, \d+\.\d+
+kernel: \[\s*\d+.\d+\] tun: \(C\) \d+-\d+ Max Krasnyansky \<maxk\@qualcomm.com\>
+
+kernel: \[\s*\d+.\d+\] Enabling conntracks and NAT for ve0
+
+kernel: \[\s*\d+.\d+\] nf_conntrack version \d+\.\d+\.\d+ \(\d+ buckets, \d+ max\)
+kernel: \[\s*\d+.\d+\] \S+: \S+ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: Rx/Tx
+
+kernel: \[\s*\d+.\d+\] ADDRCONF\(NETDEV_UP\): \S+: link is not ready
+kernel: \[\s*\d+.\d+\] ADDRCONF\(NETDEV_CHANGE\): \S+: link becomes ready
+

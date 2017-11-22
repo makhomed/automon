@@ -1,0 +1,7 @@
+
+kdump: kexec: unloaded kdump kernel
+kdump: stopped
+
+kdump: kexec: loaded kdump kernel
+kdump: started up
+

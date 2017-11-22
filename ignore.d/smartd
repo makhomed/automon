@@ -1,14 +1,19 @@
 
 smartd\[\d+\]: smartd \d+\.\d+ \d\d\d\d-\d\d-\d\d r\d+ .*
-smartd\[\d+\]: Copyright \(C\) \d+-\d+, Bruce Allen, Christian Franke, www.smartmontools.org
-smartd\[\d+\]: Opened configuration file /etc/smartmontools/smartd.conf
-smartd\[\d+\]: Configuration file /etc/smartmontools/smartd.conf was parsed, found DEVICESCAN, scanning devices
+smartd\[\d+\]: Copyright \(C\) \d+-\d+.*smartmontools.*
+smartd\[\d+\]: Opened configuration file .*
+smartd\[\d+\]: Configuration file .* was parsed, found DEVICESCAN, scanning devices
 smartd\[\d+\]: Device: /dev/sd\w+, type changed from 'scsi' to 'sat'
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], opened
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], .*, S/N:.*, WWN:.*, FW:.*, .*
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], found in smartd database: .*
+smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], not found in smartd database.
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], can't monitor Current_Pending_Sector count - no Attribute 197
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], can't monitor Offline_Uncorrectable count - no Attribute 198
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], is SMART capable. Adding to "monitor" list.
 smartd\[\d+\]: Monitoring \d+ ATA and \d+ SCSI devices
+
+smartd\[\d+\]: smartd has fork\(\)ed into background mode. New PID=\d+.
+smartd\[\d+\]: smartd received signal 15: Terminated
+smartd\[\d+\]: smartd is exiting \(exit status 0\)
 

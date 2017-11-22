@@ -106,15 +106,15 @@ class Config(object):
             else:
                 self.ignore_patterns.add(local_ignore_pattern)
         for host in self.hosts:
-            host_local_ignore_directory_name = os.path.join(self.local_ignore_directory_name, host + ".d")
-            host_local_ignore_patterns = self.read_ignore_patterns_from_directory(host_local_ignore_directory_name)
-            clean_host_local_ignore_patterns = set()
-            for host_local_ignore_pattern in host_local_ignore_patterns:
-                if host_local_ignore_pattern in self.ignore_patterns:
-                    print "WARNING: pattern '%s' already defined" % local_ignore_pattern
+            host_ignore_directory_name = os.path.join(self.local_ignore_directory_name, host + ".d")
+            host_ignore_patterns = self.read_ignore_patterns_from_directory(host_ignore_directory_name)
+            clean_host_ignore_patterns = set()
+            for host_ignore_pattern in host_ignore_patterns:
+                if host_ignore_pattern in self.ignore_patterns:
+                    print "WARNING: pattern '%s' already defined" % host_ignore_pattern
                 else:
-                    clean_host_local_ignore_patterns.add(host_local_ignore_pattern)
-            self.host_ignore_patterns[host] = clean_host_local_ignore_patterns
+                    clean_host_ignore_patterns.add(host_ignore_pattern)
+            self.host_ignore_patterns[host] = clean_host_ignore_patterns
 
     def read_ignore_patterns_from_directory(self, ignore_directory_name):
         if not os.path.isdir(ignore_directory_name):
@@ -303,21 +303,25 @@ class AutoMon(object):
                 if rest.startswith(" "):
                     dmesg_line2 = "kernel: " + rest[1:]
                     dmesg_lines.add(dmesg_line2)
-            else:
-                print "WARNING: unmatched dmesg line '%s'" % line
         logfile = self.config.logfile[host]
         messages_content = self.read_file(host, logfile)
         all_messages = messages_content.strip().split("\n")
         messages = list()
-        line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
+        line1_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
+        line2_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ kernel: \[\s*\d+\.\d+\] (?P<rest>.*)$")
         for line in all_messages:
             line = line.strip()
             if not line:
                 continue
-            match = line_re.match(line)
-            if match:
-                rest = match.group("rest")
+            match1 = line1_re.match(line)
+            if match1:
+                rest = match1.group("rest")
                 if rest in dmesg_lines:
+                    continue
+            match2 = line2_re.match(line)
+            if match2:
+                rest = match2.group("rest")
+                if "kernel: " + rest in dmesg_lines:
                     continue
             messages.append(line)
         return messages

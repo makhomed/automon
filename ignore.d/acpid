@@ -1,6 +1,7 @@
 
-acpid: starting up with netlink and the input layer
+acpid: starting up.*
 acpid: skipping incomplete file /etc/acpi/events/videoconf
 acpid: \d+ rule loaded
 acpid: waiting for events: event logging is off
+acpid: exiting
 

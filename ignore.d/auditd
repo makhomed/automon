@@ -1,9 +1,9 @@
 
-auditd\[\d+\]: Audit daemon rotating log files
-
 auditd\[\d+\]: Started dispatcher: /sbin/audispd pid: \d+
 auditd\[\d+\]: dispatcher \d+ reaped
 auditd\[\d+\]: Init complete, auditd \d+\.\d+\.\d+ listening for events \(startup state enable\)
+auditd\[\d+\]: Audit daemon rotating log files
+auditd\[\d+\]: The audit daemon is exiting.
 
 audispd: No plugins found, exiting
 

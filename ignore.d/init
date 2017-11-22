@@ -1,0 +1,3 @@
+
+init: tty \(/dev/tty\d+\) main process \(\d+\) killed by TERM signal
+

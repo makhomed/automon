@@ -5,7 +5,7 @@ kernel: #011RCU restricting CPUs from NR_CPUS=\d+ to nr_cpu_ids=\d+\.
 kernel: IPv6: ADDRCONF\(NETDEV_UP\): \S+1: link is not ready
 kernel: IPv6: ADDRCONF\(NETDEV_CHANGE\): \S+: link becomes ready
 
-kernel: igb \d+:\d+:\d+\.\d+ \S+: igb: \S+ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+kernel: \S+ \d+:\d+:\d+\.\d+ \S+: \S+: \S+ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
 
 kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default\. Update your scripts to load br_netfilter if you need this\.
 
