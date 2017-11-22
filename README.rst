@@ -4,6 +4,9 @@ automon
 
 /var/log/messages monitoring tool
 
+This tool will monitor /var/log/messages file
+and send alerts via Telegram if detects any anomalies.
+
 Installation
 ------------
 
@@ -26,7 +29,7 @@ Configuration
 .. code-block:: none
 
     host localhost
-    host example.com
+    host example.com one-line description of this host
 
 Configuration file allow comments, from symbol ``#`` to end of line.
 
@@ -58,7 +61,8 @@ For example:
 ``/opt/automon/bin/alert-via-telegram``. Program ``/opt/automon/bin/alert-via-telegram``
 included in automon and send alerts to Telegram via https://pypi.python.org/pypi/telegram-send script.
 ``alert`` program receive one argument - full name of file with generated alert text. See source
-of ``/opt/automon/bin/alert-via-telegram`` program for details.
+of ``/opt/automon/bin/alert-via-telegram`` program for details. Using ``/opt/automon/bin/alert-via-telegram``
+as example you can write own alert program for sending alerts via email or SMS or via any other way.
 
 ``delay`` directive defines delay between two automon scans is daemon mode. By default delay is 600 seconds.
 
@@ -97,6 +101,22 @@ Before first run
 Before first run you need to create Telegram bot and configure telegram-send script.
 Detalis see in https://pypi.python.org/pypi/telegram-send documentation.
 
+Secure Shell
+------------
+
+For work you need to generate private ssh key on ``automon`` server
+with comamnd ``ssh-keygen -t rsa`` and copy public key from ``/root/.ssh/id_rsa.pub``
+to ``/root/.ssh/authorized_keys`` on monitored servers. Also you need to check connection
+with monitored server with command ``ssh example.com`` and answer ``yes`` to ssh question:
+
+.. code-block:: none
+
+    # ssh .example.com
+    The authenticity of host 'example.com' can't be established.
+    ECDSA key fingerprint is SHA256:/cYI0bJzEX+CF3DhGEUQ+ZeGFmMzEJYAt3C15450zKs.
+    ECDSA key fingerprint is MD5:44:20:bd:f5:aa:a7:52:ac:c5:19:e5:e0:28:2b:90:49.
+    Are you sure you want to continue connecting (yes/no)? yes
+
 Automation via cron
 -------------------
 
@@ -134,7 +154,6 @@ After this you need to start service:
   - ``systemctl status automon``
 
 If all ok you will see what service is enabled and running.
-
 
 Automation via multiple systemd services
 ----------------------------------------
