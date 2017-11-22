@@ -111,7 +111,7 @@ with monitored server with command ``ssh example.com`` and answer ``yes`` to ssh
 
 .. code-block:: none
 
-    # ssh .example.com
+    # ssh example.com
     The authenticity of host 'example.com' can't be established.
     ECDSA key fingerprint is SHA256:/cYI0bJzEX+CF3DhGEUQ+ZeGFmMzEJYAt3C15450zKs.
     ECDSA key fingerprint is MD5:44:20:bd:f5:aa:a7:52:ac:c5:19:e5:e0:28:2b:90:49.
