@@ -1,0 +1,5 @@
+
+NetworkManager\[\d+\]: <info> .*
+
+nm-dispatcher: req:\d+ 'dhcp4-change' .*
+
