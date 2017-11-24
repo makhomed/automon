@@ -3,3 +3,9 @@ NetworkManager\[\d+\]: <info> .*
 
 nm-dispatcher: req:\d+ 'dhcp4-change' .*
 
+nm-dispatcher: req:\d+ 'hostname': .*
+
+nm-dispatcher: req:\d+ 'up' .*
+
+nm-dispatcher: req:\d+ 'connectivity-change': .*
+

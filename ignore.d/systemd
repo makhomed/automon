@@ -7,6 +7,11 @@ systemd(\[\d+\])?: Set hostname to .*
 systemd(\[\d+\])?: Running in initial RAM disk.
 systemd(\[\d+\])?: Created slice .* Slice.
 
+systemd(\[\d+\])?: Detected virtualization kvm\.
+
+systemd: Activating swap .*
+systemd: Activated swap .*
+
 systemd: Stopping .*
 systemd: Stopped .*
 
@@ -56,6 +61,9 @@ systemd-logind: Removed session \d+\.
 
 systemd-logind: Watching system buttons on /dev/input/event\d+ \(Power Button\)
 systemd-logind: New seat seat\d+\.
+systemd-logind: Power key pressed\.
+systemd-logind: Powering Off\.\.\.
+systemd-logind: System is powering down\.
 
 systemd-udevd: starting version \d+
 
@@ -65,6 +73,6 @@ systemd-udevd: could not find module by name='ipmi_msghandler'
 
 systemd-machined: New machine .*
 
-systemd: Startup finished in \d+\.\d+s \(kernel\) \+ \d+\.\d+s \(initrd\) \+ \d+min \d+\.\d+s \(userspace\) = \d+min \d+\.\d+s\.
+systemd: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\) = .*\.
 systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
 

@@ -4,10 +4,10 @@ kernel: perf: interrupt took too long \(\d+ > \d+\), lowering kernel.perf_event_
 kernel: gran_size: \d+K #011chunk_size: \d+G #011num_reg: \d+  #011lose cover RAM: \d+G
 kernel: #011RCU restricting CPUs from NR_CPUS=\d+ to nr_cpu_ids=\d+\.
 
-kernel: IPv6: ADDRCONF\(NETDEV_UP\): \S+1: link is not ready
+kernel: IPv6: ADDRCONF\(NETDEV_UP\): \S+: link is not ready
 kernel: IPv6: ADDRCONF\(NETDEV_CHANGE\): \S+: link becomes ready
 
-kernel: \S+ \d+:\d+:\d+\.\d+ \S+: \S+: \S+ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+kernel: .* NIC Link is Up .* Mbps Full Duplex, Flow Control: .*
 
 kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default\. Update your scripts to load br_netfilter if you need this\.
 
@@ -35,4 +35,17 @@ kernel: raid6: sse2x2   gen\(\)\s+\d+ MB/s
 kernel: raid6: sse2x4   gen\(\)\s+\d+ MB/s
 kernel: raid6: using algorithm sse2x4 gen\(\) \(\d+ MB/s\)
 kernel: raid6: using ssse3x2 recovery algorithm
+
+kernel: kvm-clock: using sched offset of \S+ cycles
+kernel: tsc: Detected \S+ MHz processor
+kernel: Calibrating delay loop \(skipped\) preset value\.\. \S+ BogoMIPS \(\S+\)
+kernel: node \d+ initialised, \d+ pages in \d+ms
+kernel: RTC time:  \S+, date: \S+
+kernel:  Magic number: \d+:\d+:\d+
+kernel: rtc_cmos \S+ setting system clock to .*
+kernel: smpboot: Total of \d+ processors activated \(\S+ BogoMIPS\)
+kernel: tsc: Refined TSC clocksource calibration: \S+ MHz
+
+kernel: type=\d+ audit\(\S+\): initialized
+kernel: type=\d+ audit\(\S+\): audit_pid=\d+ old=\d+ auid=\d+ ses=\d+ res=\d+
 

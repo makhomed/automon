@@ -1,4 +1,7 @@
 
+systemd: Failed to read PID from file /var/run/nginx.pid: Invalid argument
+systemd: PID file /var/run/nginx.pid not readable \(yet\?\) after start.
+
 nginx: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: nginx: configuration file /etc/nginx/nginx.conf test is successful
 
