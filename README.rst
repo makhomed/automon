@@ -130,7 +130,7 @@ After it configure cron job, for example, in file ``/etc/cron.d/automon``:
 Automation via systemd service
 ------------------------------
 
-Create configuration file ``/opt/automon/service.conf`` and define hosts to check inside it.
+Create configuration file ``/opt/automon/automon-daemon.conf`` and define hosts to check inside it.
 After it create systemd service, for example, in file ``/etc/systemd/system/automon.service``:
 
 .. code-block:: none
@@ -140,7 +140,7 @@ After it create systemd service, for example, in file ``/etc/systemd/system/auto
     After=network-online.target
 
     [Service]
-    ExecStart=/opt/automon/automon -c /opt/automon/service.conf daemon
+    ExecStart=/opt/automon/automon -c /opt/automon/automon-daemon.conf daemon
     Restart=always
 
     [Install]
