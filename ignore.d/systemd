@@ -9,6 +9,8 @@ systemd(\[\d+\])?: Created slice .* Slice.
 
 systemd(\[\d+\])?: Detected virtualization kvm\.
 
+systemd: Got automount request for .*, triggered by .*
+
 systemd: Activating swap .*
 systemd: Activated swap .*
 
