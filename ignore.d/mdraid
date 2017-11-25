@@ -1,3 +1,8 @@
 
-kernel:( \[\d+\.\d+\]) md: md\d+: data-check done.
+kernel:( \[\s*\d+\.\d+\])? md: md\d+: data-check done.
+kernel:( \[\s*\d+\.\d+\])? md: data-check of RAID array md\d+
+kernel:( \[\s*\d+\.\d+\])? md: minimum _guaranteed_\s+speed: \d+ KB/sec/disk.
+kernel:( \[\s*\d+\.\d+\])? md: using maximum available idle IO bandwidth \(but not more than \d+ KB/sec\) for data-check.
+kernel:( \[\s*\d+\.\d+\])? md: using \d+k window, over a total of \d+k.
+kernel:( \[\s*\d+\.\d+\])? md: delaying data-check of md\d+ until md\d+ has finished \(they share one or more physical units\)
 
