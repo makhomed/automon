@@ -3,11 +3,13 @@ systemd(\[\d+\])?: systemd \d+ running in system mode\. .*
 systemd(\[\d+\])?: Detected architecture \S+\.
 systemd(\[\d+\])?: Inserted module '.*'
 systemd(\[\d+\])?: Listening on .*
+systemd(\[\d+\])?: No hostname configured.
 systemd(\[\d+\])?: Set hostname to .*
 systemd(\[\d+\])?: Running in initial RAM disk.
 systemd(\[\d+\])?: Created slice .* Slice.
 
 systemd(\[\d+\])?: Detected virtualization kvm\.
+systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
 systemd: Got automount request for .*, triggered by .*
 
@@ -29,6 +31,8 @@ systemd: Found device .*
 systemd: Mounting .*
 systemd: Mounted .*
 systemd: Unmounting .*
+
+systemd: Time has been changed
 
 systemd: Started Session \d+ of user root\.
 systemd: Starting Session \d+ of user root\.

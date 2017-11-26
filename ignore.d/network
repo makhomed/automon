@@ -1,6 +1,9 @@
 
 network: Bringing up loopback interface:  \[  OK  \]
-network: Bringing up interface \S+:  \[  OK  \]
+network: Bringing up interface .*
+network: \[  OK  \]
+network: Determining IP information for \S+ done.
 
 NET\[\d+\]: /etc/sysconfig/network-scripts/ifup-post : updated /etc/resolv.conf
+NET\[\d+\]: /usr/sbin/dhclient-script : updated /etc/resolv.conf
 

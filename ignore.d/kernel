@@ -49,3 +49,5 @@ kernel: tsc: Refined TSC clocksource calibration: \S+ MHz
 kernel: type=\d+ audit\(\S+\): initialized
 kernel: type=\d+ audit\(\S+\): audit_pid=\d+ old=\d+ auid=\d+ ses=\d+ res=\d+
 
+kernel: random: crng init done
+

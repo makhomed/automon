@@ -1,0 +1,5 @@
+
+rpc.statd\[\d+\]: Version \S+ starting
+rpc.statd\[\d+\]: Initializing NSM state
+rpc.statd\[\d+\]: Running as root.  chown /var/lib/nfs/statd to choose different user
+
