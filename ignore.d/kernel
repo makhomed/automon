@@ -16,6 +16,7 @@ kernel: ip6_tables: \(C\) \d+-\d+ Netfilter Core Team
 kernel: Ebtables v\d+\.\d+ registered
 
 kernel: nf_conntrack version \d+\.\d+\.\d+ \(\d+ buckets, \d+ max\)
+kernel: device \S+ left promiscuous mode
 
 kernel: tun: Universal TUN/TAP device driver, \d+\.\d+
 kernel: tun: \(C\) \d+-\d+ Max Krasnyansky \<maxk\@qualcomm\.com\>
@@ -35,6 +36,11 @@ kernel: raid6: sse2x2   gen\(\)\s+\d+ MB/s
 kernel: raid6: sse2x4   gen\(\)\s+\d+ MB/s
 kernel: raid6: using algorithm sse2x4 gen\(\) \(\d+ MB/s\)
 kernel: raid6: using ssse3x2 recovery algorithm
+kernel: raid6: avx2x1   gen\(\)\s+\d+ MB/s
+kernel: raid6: avx2x2   gen\(\)\s+\d+ MB/s
+kernel: raid6: avx2x4   gen\(\)\s+\d+ MB/s
+kernel: raid6: using algorithm avx2x4 gen\(\) \(\d+ MB/s\)
+kernel: raid6: using avx2x2 recovery algorithm
 
 kernel: kvm-clock: using sched offset of \S+ cycles
 kernel: tsc: Detected \S+ MHz processor

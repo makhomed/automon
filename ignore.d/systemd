@@ -78,6 +78,7 @@ systemd-udevd: could not find module by name='ipmi_devintf'
 systemd-udevd: could not find module by name='ipmi_msghandler'
 
 systemd-machined: New machine .*
+systemd-machined: Machine .* terminated.
 
 systemd: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\) = .*\.
 systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
