@@ -1,6 +1,4 @@
 
-kernel: conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
-
 iptables.init: iptables: Setting chains to policy ACCEPT: filter \[  OK  \]
 iptables.init: iptables: Flushing firewall rules: \[  OK  \]
 iptables.init: iptables: Unloading modules: \[  OK  \]

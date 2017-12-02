@@ -1,0 +1,4 @@
+ip6tables.init: ip6tables: Setting chains to policy ACCEPT: filter \[  OK  \]
+ip6tables.init: ip6tables: Flushing firewall rules: \[  OK  \]
+ip6tables.init: ip6tables: Unloading modules: \[  OK  \]
+ip6tables.init: ip6tables: Applying firewall rules: \[  OK  \]

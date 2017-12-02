@@ -1,4 +1,6 @@
 
+kernel: conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
+
 kernel: perf: interrupt took too long \(\d+ > \d+\), lowering kernel.perf_event_max_sample_rate to \d+
 
 kernel: gran_size: \d+K #011chunk_size: \d+G #011num_reg: \d+  #011lose cover RAM: \d+G
@@ -26,6 +28,7 @@ kernel: \S+: port \d+\(\S+\) entered disabled state
 kernel: \S+: port \d+\(\S+\) entered forwarding state
 kernel: device \S+ entered promiscuous mode
 
+kernel: alg: No test for crc32 \(crc32-pclmul\)
 kernel: Btrfs loaded, crc32c=crc32c-intel
 kernel: fuse init \(API version \d+\.\d+\)
 
@@ -56,4 +59,17 @@ kernel: type=\d+ audit\(\S+\): initialized
 kernel: type=\d+ audit\(\S+\): audit_pid=\d+ old=\d+ auid=\d+ ses=\d+ res=\d+
 
 kernel: random: crng init done
+
+kernel: \[TTM\] Zone  kernel: Available graphics memory: .*
+kernel: \[TTM\] Initializing pool allocator
+kernel: \[TTM\] Initializing DMA pool allocator
+kernel: \[drm\] fb mappable at \S+
+kernel: \[drm\] vram aper at \S+
+kernel: \[drm\] size \S+
+kernel: \[drm\] fb depth is \d+
+kernel: \[drm\]    pitch is \d+
+kernel: fbcon: cirrusdrmfb \(fb0\) is primary device
+kernel: Console: switching to colour frame buffer device \d+x\d+
+kernel: cirrus \S+: fb0: cirrusdrmfb frame buffer device
+kernel: \[drm\] Initialized cirrus \S+ \S+ for \S+ on minor \d+
 

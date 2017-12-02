@@ -4,6 +4,11 @@ network: Bringing up interface .*
 network: \[  OK  \]
 network: Determining IP information for \S+ done.
 
+network: Determining if ip address \S+ is already in use for device \S+\.\.\.
+
+network: Shutting down interface \S+:  \[  OK  \]
+network: Shutting down loopback interface:  \[  OK  \]
+
 NET\[\d+\]: /etc/sysconfig/network-scripts/ifup-post : updated /etc/resolv.conf
 NET\[\d+\]: /usr/sbin/dhclient-script : updated /etc/resolv.conf
 

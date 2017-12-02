@@ -3,11 +3,17 @@ kernel: \[\s*\d+\.\d+\] CT: \d+: stopped
 kernel: \[\s*\d+\.\d+\] CT: \d+: started
 
 kernel: \[\s*\d+\.\d+\] ploop_dev: module loaded
+
+kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\):
+kernel: \[\s*\d+\.\d+\] mounted filesystem with ordered data mode. Opts:
 kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): mounted filesystem with ordered data mode. Opts:
+
 kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): loaded balloon from 12 \(\d+ blocks\)
 kernel: \[\s*\d+\.\d+\]  ploop\d+:.*
 kernel: \[\s*\d+\.\d+\]  p1
 kernel: \[\s*\d+\.\d+\]
+
+kernel: \[\s*\d+\.\d+\] tcp_parse_options: Illegal window scaling value \d+ >14 received.
 
 kernel: \[\s*\d+.\d+\] EXT4-fs \(ploop\d+p1\): write access unavailable, skipping orphan cleanup
 kernel: \[\s*\d+.\d+\] EXT4-fs \(ploop\d+p1\): recovery complete

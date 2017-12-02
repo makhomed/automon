@@ -1,0 +1,7 @@
+
+mariadb-prepare-db-dir: Database MariaDB is probably initialized in /var/lib/mysql already, nothing is done.
+mariadb-prepare-db-dir: If this is not the case, make sure the /var/lib/mysql is empty before running mariadb-prepare-db-dir.
+
+mysqld_safe: \d+ \S+ mysqld_safe Logging to '/var/log/mariadb/mariadb.log'.
+mysqld_safe: \d+ \S+ mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+

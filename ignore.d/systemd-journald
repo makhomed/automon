@@ -1,0 +1,3 @@
+
+systemd-journald\[\d+\]: Received SIGTERM from PID 1 \(systemd\).
+

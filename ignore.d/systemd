@@ -58,28 +58,7 @@ systemd: Switching root.
 systemd: Created slice .*
 systemd: Received SIGRTMIN\+\d+ from PID \d+ \(plymouthd\).
 
-systemd-fsck: /sbin/fsck.xfs: XFS file system.
-
-systemd-journald\[\d+\]: Received SIGTERM from PID 1 \(systemd\).
-
-systemd-logind: New session \d+ of user \S+\.
-systemd-logind: Removed session \d+\.
-
-systemd-logind: Watching system buttons on /dev/input/event\d+ \(Power Button\)
-systemd-logind: New seat seat\d+\.
-systemd-logind: Power key pressed\.
-systemd-logind: Powering Off\.\.\.
-systemd-logind: System is powering down\.
-
-systemd-udevd: starting version \d+
-
-systemd-udevd: could not find module by name='ipmi_si'
-systemd-udevd: could not find module by name='ipmi_devintf'
-systemd-udevd: could not find module by name='ipmi_msghandler'
-
-systemd-machined: New machine .*
-systemd-machined: Machine .* terminated.
-
 systemd: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\) = .*\.
+
 systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
 
