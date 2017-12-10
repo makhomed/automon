@@ -1,4 +1,6 @@
 
+kernel: \[\s*\d+\.\d+\] conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
+
 kernel: \[\s*\d+\.\d+\] CT: \d+: stopped
 kernel: \[\s*\d+\.\d+\] CT: \d+: started
 
