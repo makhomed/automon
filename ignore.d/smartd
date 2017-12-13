@@ -1,4 +1,5 @@
 
+smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS returned 129, not ATA compliant, ignoring -n Directive
 smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS spins up disk \(0x81 -> 0xff\)
 
 smartd\[\d+\]: smartd \d+\.\d+ \d\d\d\d-\d\d-\d\d r\d+ .*
