@@ -1,0 +1,3 @@
+
+fail2ban.filter\[\d+\]: INFO Log rotation detected for /var/log/secure
+
