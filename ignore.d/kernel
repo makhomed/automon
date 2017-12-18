@@ -1,6 +1,8 @@
 
 kernel: conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
 
+kernel: nr_pdflush_threads exported in /proc is scheduled for removal
+
 kernel: perf: interrupt took too long \(\d+ > \d+\), lowering kernel.perf_event_max_sample_rate to \d+
 
 kernel: gran_size: \d+K #011chunk_size: \d+G #011num_reg: \d+  #011lose cover RAM: \d+G
