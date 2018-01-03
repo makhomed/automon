@@ -10,21 +10,21 @@ and send alerts via Telegram if detects any anomalies.
 Installation
 ------------
 
- - ``cd /opt``
- - ``git clone https://github.com/makhomed/automon.git automon``
+- ``cd /opt``
+- ``git clone https://github.com/makhomed/automon.git automon``
 
 Upgrade
 -------
 
- - ``cd /opt/automon``
- - ``git pull``
+- ``cd /opt/automon``
+- ``git pull``
 
 
 Configuration
 -------------
 
-  - ``vim /opt/automon/automon.conf``
-  - write to config something like this:
+- ``vim /opt/automon/automon.conf``
+- write to config something like this:
 
 .. code-block:: none
 
@@ -148,10 +148,10 @@ After it create systemd service, for example, in file ``/etc/systemd/system/auto
 
 After this you need to start service:
 
-  - ``systemctl daemon-reload``
-  - ``systemctl enable automon``
-  - ``systemctl start automon``
-  - ``systemctl status automon``
+- ``systemctl daemon-reload``
+- ``systemctl enable automon``
+- ``systemctl start automon``
+- ``systemctl status automon``
 
 If all ok you will see what service is enabled and running.
 
@@ -177,16 +177,16 @@ for example, in file ``/etc/systemd/system/automon@.service``:
 
 After this you need to start services:
 
-  - ``systemctl daemon-reload``
-  - ``systemctl enable automon@service1``
-  - ``systemctl enable automon@service2``
-  - ...
-  - ``systemctl start automon@service1``
-  - ``systemctl start automon@service2``
-  - ...
-  - ``systemctl status automon@service1``
-  - ``systemctl status automon@service2``
-  - ...
+- ``systemctl daemon-reload``
+- ``systemctl enable automon@service1``
+- ``systemctl enable automon@service2``
+- ...
+- ``systemctl start automon@service1``
+- ``systemctl start automon@service2``
+- ...
+- ``systemctl status automon@service1``
+- ``systemctl status automon@service2``
+- ...
 
 If all ok you will see what ``automon`` services are enabled and running.
 
