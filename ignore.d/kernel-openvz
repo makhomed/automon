@@ -9,6 +9,7 @@ kernel: \[\s*\d+\.\d+\] ploop_dev: module loaded
 kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\):
 kernel: \[\s*\d+\.\d+\] mounted filesystem with ordered data mode. Opts:
 kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): mounted filesystem with ordered data mode. Opts:
+kernel: \[\s*\d+\.\d+\] EXT4-fs \(dm-\d+\): mounted filesystem with ordered data mode. Opts:
 
 kernel: \[\s*\d+\.\d+\] EXT4-fs \(ploop\d+p1\): loaded balloon from 12 \(\d+ blocks\)
 kernel: \[\s*\d+\.\d+\]  ploop\d+:.*
