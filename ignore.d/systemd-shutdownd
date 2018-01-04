@@ -1,0 +1,4 @@
+
+systemd-shutdownd: Shutting down at .*
+systemd-shutdownd: Creating /run/nologin, blocking further logins\.\.\.
+
