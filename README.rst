@@ -91,7 +91,7 @@ If agrument ``-c`` not defined - by default will be used config ``/opt/automon/a
 ``daemon`` mode useful for running ``automon`` as systemd service. In this mode ``automon`` will be run forever with
 ``delay`` seconds delay between two scans of hosts defined in configuration.
 ``once`` mode is useful for running ``automon`` from cron. In ``once`` mode ``automon`` run once and exit.
-``debug`` mode useful for debug, in this mode no alerts will be send and no logscan state will be saved.
+``debug`` mode useful for debug, in this mode no alerts will be send and no logscan state will be readed or saved.
 In ``debug`` mode alert will be printed to stdout and ``automon`` will exit. In ``daemon`` and ``once`` modes
 alerts will be send to system administrator via alert program.
 
