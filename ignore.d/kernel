@@ -75,3 +75,6 @@ kernel: Console: switching to colour frame buffer device \d+x\d+
 kernel: cirrus \S+: fb0: cirrusdrmfb frame buffer device
 kernel: \[drm\] Initialized cirrus \S+ \S+ for \S+ on minor \d+
 
+kernel: zd\d+: p\d+
+kernel: zd\d+: p\d+ p\d+
+
