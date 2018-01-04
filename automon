@@ -332,7 +332,10 @@ class AutoMon(object):
         logfile = self.config.logfile[host]
         description = self.config.description[host]
         messages = self.read_messages(host)
-        seen_messages = self.read_seen_messages(host)
+        if self.mode != "debug":
+            seen_messages = self.read_seen_messages(host)
+        else:
+            seen_messages = None
         new_messages = self.get_new_messages(messages, seen_messages)
         line_re = re.compile(r"^\w{3} .. \d\d:\d\d:\d\d \S+ (?P<rest>.*)$")
         alert = list()
