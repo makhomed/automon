@@ -8,7 +8,8 @@ x11vnc: /usr/bin/startxfce4: X server already running on display :\d+
 x11vnc: generating cookie with syscall
 
 x11vnc: \S+: Fatal IO error 11 \(Resource temporarily unavailable\) on X server \S+
-x11vnc: \s+: Fatal IO error 104 \(Connection reset by peer\) on X server \S+
+x11vnc: \S+: Fatal IO error 104 \(Connection reset by peer\) on X server \S+
+x11vnc: \S+: Fatal IO error 4 \(Interrupted system call\) on X server \S+
 
 journal: ICE I/O Error
 x11vnc: extra\[\d+\] signal: -1

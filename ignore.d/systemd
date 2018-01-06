@@ -62,3 +62,6 @@ systemd: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\)
 
 systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
 
+systemd: Unit virtlockd.service cannot be reloaded because it is inactive.
+systemd: Unit virtlogd.service cannot be reloaded because it is inactive.
+

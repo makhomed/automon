@@ -1,6 +1,10 @@
 
 libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: warning : qemuDomainObjTaint:\d+ : Domain id=\d+ name='.*' uuid=\S+ is tainted: custom-argv
 libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: warning : qemuDomainObjTaint:\d+ : Domain id=\d+ name='.*' uuid=\S+ is tainted: host-cpu
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: warning : virQEMUCapsInitCached:\d+ : Failed to load cached caps from \S+ for \S+: internal error: missing microcode version in QEMU capabilities cache
+
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: error : qemuMonitorIO:\d+ : internal error: End of file from qemu monitor
+libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: error : virQEMUCapsLoadCache:\d+ : internal error: missing microcode version in QEMU capabilities cache
 
 libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: info : libvirt version: \d+\.\d+\.\d+, package: .*
 libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: info : hostname: .*

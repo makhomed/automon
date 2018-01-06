@@ -78,3 +78,6 @@ kernel: \[drm\] Initialized cirrus \S+ \S+ for \S+ on minor \d+
 kernel: zd\d+: p\d+
 kernel: zd\d+: p\d+ p\d+
 
+kernel: Calibrating delay loop \S+, value calculated using timer frequency.. \S+ BogoMIPS \S+
+kernel: RTC time: \d\d:\d\d:\d\d, date: \d\d/\d\d/\d\d
+
