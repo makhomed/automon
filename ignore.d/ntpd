@@ -6,7 +6,8 @@ ntpd\[\d+\]: 0.0.0.0 .* kern kernel time sync enabled
 ntpd\[\d+\]: Listen and drop on .* UDP 123
 ntpd\[\d+\]: Listening on routing socket on fd #\d+ for interface updates
 ntpd\[\d+\]: 0.0.0.0 .* restart
-ntpd\[\d+\]: 0.0.0.0 .* freq_set kernel \d+\.\d+ PPM
+ntpd\[\d+\]: 0.0.0.0 .* freq_set kernel \S+ PPM
+
 ntpd\[\d+\]: Deleting interface #\d+ .* interface stats: .*
 ntpd\[\d+\]: 0.0.0.0 .* clock_sync
 ntpd\[\d+\]: Listen normally on .* UDP 123

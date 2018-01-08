@@ -3,3 +3,5 @@ lvm: WARNING: lvmetad is being updated, retrying \(setup\) for \d+ more seconds\
 lvm: \d+ logical volume\(s\) in volume group ".*" monitored
 lvm: \d+ logical volume\(s\) in volume group ".*" now active
 
+lvm: Device \d+:\d+ not found. Cleared from lvmetad cache.
+

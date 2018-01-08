@@ -81,3 +81,6 @@ kernel: zd\d+: p\d+ p\d+
 kernel: Calibrating delay loop \S+, value calculated using timer frequency.. \S+ BogoMIPS \S+
 kernel: RTC time: \d\d:\d\d:\d\d, date: \d\d/\d\d/\d\d
 
+kernel: microcode: CPU\d+ updated to revision \S+, date = \d\d\d\d-\d\d-\d\d
+kernel: microcode: CPU\d+ sig=\S+, pf=\S+, revision=\S+
+
