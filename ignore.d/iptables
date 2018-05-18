@@ -1,5 +1,5 @@
 
-iptables.init: iptables: Setting chains to policy ACCEPT: filter \[  OK  \]
+iptables.init: iptables: Setting chains to policy ACCEPT: .*
 iptables.init: iptables: Flushing firewall rules: \[  OK  \]
 iptables.init: iptables: Unloading modules: \[  OK  \]
 iptables.init: iptables: Applying firewall rules: \[  OK  \]
