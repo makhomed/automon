@@ -3,5 +3,4 @@ iptables.init: iptables: Setting chains to policy ACCEPT: filter \[  OK  \]
 iptables.init: iptables: Flushing firewall rules: \[  OK  \]
 iptables.init: iptables: Unloading modules: \[  OK  \]
 iptables.init: iptables: Applying firewall rules: \[  OK  \]
-iptables.init: iptables: Loading additional modules: ip_conntrack_ftp \[  OK  \]
-
+iptables.init: iptables: Loading additional modules: .*
