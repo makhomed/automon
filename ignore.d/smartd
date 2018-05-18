@@ -15,6 +15,7 @@ smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], can't monitor Current_Pending_Sector 
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], can't monitor Offline_Uncorrectable count - no Attribute 198
 smartd\[\d+\]: Device: /dev/sd\w+ \[SAT\], is SMART capable. Adding to "monitor" list.
 smartd\[\d+\]: Monitoring \d+ ATA and \d+ SCSI devices
+smartd\[\d+\]: Monitoring \d+ ATA/SATA, \d+ SCSI/SAS and \d+ NVMe devices
 smartd\[\d+\]: smartd has fork\(\)ed into background mode. New PID=\d+.
 smartd\[\d+\]: smartd received signal 15: Terminated
 smartd\[\d+\]: smartd is exiting \(exit status 0\)

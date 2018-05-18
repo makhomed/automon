@@ -8,3 +8,7 @@ dbus-daemon: dbus\[\d+\]: \[system\] Successfully activated service '.*'
 dbus\[\d+\]: \[system\] Reloaded configuration
 dbus-daemon: dbus\[\d+\]: \[system\] Reloaded configuration
 
+org.a11y.Bus: Activating service name='org.a11y.atspi.Registry'
+org.a11y.Bus: Successfully activated service 'org.a11y.atspi.Registry'
+org.a11y.atspi.Registry: SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+

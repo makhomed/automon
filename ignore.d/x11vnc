@@ -4,14 +4,19 @@ x11vnc: PORT=\d+
 x11vnc: trying N=\d+ ...
 x11vnc: redir_daemon=
 x11vnc: /usr/bin/Xvfb :\d+ -screen \d+ \d+x\d+x\d+ -cc \d+ -nolisten tcp -auth .*
+x11vnc: /usr/bin/xinit /usr/bin/startxfce4 -- /usr/bin/Xvfb :\d+ -screen \d+ \S+ -cc \d+ -nolisten tcp -auth \S+
 x11vnc: /usr/bin/startxfce4: X server already running on display :\d+
+x11vnc: /usr/bin/xinit: XFree86_VT property unexpectedly has \d+ items instead of \d+
 x11vnc: generating cookie with syscall
+x11vnc: /usr/bin/xinit: connection to X server lost
+x11vnc: waiting for X server to shut down extra\[1\] signal: -1
 
 x11vnc: \S+: Fatal IO error 11 \(Resource temporarily unavailable\) on X server \S+
 x11vnc: \S+: Fatal IO error 104 \(Connection reset by peer\) on X server \S+
 x11vnc: \S+: Fatal IO error 4 \(Interrupted system call\) on X server \S+
 
 journal: ICE I/O Error
+x11vnc: caught signal: 15
 x11vnc: extra\[\d+\] signal: -1
 journal: Disconnected from session manager.
 systemd: x11vnc.service: main process exited, code=exited, status=4/NOPERMISSION
