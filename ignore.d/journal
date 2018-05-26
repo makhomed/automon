@@ -6,3 +6,5 @@ journal: Runtime journal is using \d+\.\d+.*
 journal: Error opening /dev/dri/card0: No such file or directory
 journal: Suppressed \d+ messages from /user.slice/user-0.slice
 
+journal: gdkproperty-x11.c:325 invalid X atom: 292
+
