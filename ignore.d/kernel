@@ -47,6 +47,12 @@ kernel: raid6: avx2x4   gen\(\)\s+\d+ MB/s
 kernel: raid6: using algorithm avx2x4 gen\(\) \(\d+ MB/s\)
 kernel: raid6: using avx2x2 recovery algorithm
 
+kernel: cryptd: max_cpu_qlen set to 100
+kernel: AVX2 version of gcm_enc/dec engaged.
+kernel: AES CTR mode by8 optimization enabled
+kernel: alg: No test for __gcm-aes-aesni \(__driver-gcm-aes-aesni\)
+kernel: alg: No test for __generic-gcm-aes-aesni \(__driver-generic-gcm-aes-aesni\)
+
 kernel: kvm-clock: using sched offset of \S+ cycles
 kernel: tsc: Detected \S+ MHz processor
 kernel: Calibrating delay loop \(skipped\) preset value\.\. \S+ BogoMIPS \(\S+\)
