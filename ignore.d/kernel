@@ -13,6 +13,10 @@ kernel: IPv6: ADDRCONF\(NETDEV_CHANGE\): \S+: link becomes ready
 
 kernel: .* NIC Link is Up .* Mbps Full Duplex, Flow Control: .*
 
+kernel: ixgbe \S+ registered PHC device on \S+
+kernel: ixgbe \S+ \S+ NIC Link is Up 1 Gbps, Flow Control: None
+kernel: ixgbe \S+ removed PHC on \S+
+
 kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default\. Update your scripts to load br_netfilter if you need this\.
 
 kernel: ip_tables: \(C\) \d+-\d+ Netfilter Core Team
