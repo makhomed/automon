@@ -6,7 +6,7 @@ zed: eid=\d+ class=config_sync pool_guid=\S+
 zed: eid=\d+ class=pool_import pool_guid=\S+
 zed: Exiting
 
-zed\[\d+\]: Invoking "all\-syslog\.sh" eid=\d+ pid=\d+
-zed\[\d+\]: Finished "all\-syslog\.sh" eid=\d+ pid=\d+ exit=0
+zed\[\d+\]: Invoking "all-syslog\.sh" eid=\d+ pid=\d+
+zed\[\d+\]: Finished "all-syslog\.sh" eid=\d+ pid=\d+ exit=0
 zed\[\d+\]: Found PID \d+ bound to PID file .*
 
