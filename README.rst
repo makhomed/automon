@@ -142,9 +142,13 @@ After it create systemd service, for example, in file ``/etc/systemd/system/auto
     [Service]
     ExecStart=/opt/automon/automon -c /opt/automon/automon-daemon.conf daemon
     Restart=always
+    StartLimitInterval=0
 
     [Install]
     WantedBy=multi-user.target
+
+Note: in new versions of systemd StartLimitInterval renamed to StartLimitIntervalSec
+and moved from [Service] to [Unit] section. See details at https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html
 
 After this you need to start service:
 
@@ -171,9 +175,13 @@ for example, in file ``/etc/systemd/system/automon@.service``:
     [Service]
     ExecStart=/opt/automon/automon -c /opt/automon/%i.conf daemon
     Restart=always
+    StartLimitInterval=0
 
     [Install]
     WantedBy=multi-user.target
+
+Note: in new versions of systemd StartLimitInterval renamed to StartLimitIntervalSec
+and moved from [Service] to [Unit] section. See details at https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html
 
 After this you need to start services:
 
