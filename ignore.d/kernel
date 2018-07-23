@@ -99,3 +99,5 @@ kernel: Bridge firewalling registered
 kernel: Netfilter messages via NETLINK \S+
 kernel: ctnetlink \S+ registering with nfnetlink.
 
+kernel: ppdev: user-space parallel port driver
+
