@@ -1,7 +1,6 @@
 
 unbound-checkconf: unbound-checkconf: no errors in /etc/unbound/unbound.conf
 unbound: .* unbound\[\S+\] warning: increased limit\(open files\) from \d+ to \d+
-unbound: \[\S+\] notice: init module 0: validator
-unbound: \[\S+\] notice: init module 1: iterator
+unbound: \[\S+\] notice: init module \d+: \S+
 unbound: \[\S+\] info: start of service \(unbound \S+\).
 
