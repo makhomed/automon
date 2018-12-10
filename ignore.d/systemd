@@ -27,6 +27,8 @@ systemd: Reloaded .*
 systemd: Reloading\.
 systemd: Reexecuting\.
 
+systemd: Reloading .*
+
 systemd: Found device .*
 systemd: Mounting .*
 systemd: Mounted .*
