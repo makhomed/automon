@@ -32,3 +32,5 @@ x11vnc: The application '\S+' lost its connection to the display \S+;
 x11vnc: most likely the X server was shut down or you killed/destroyed
 x11vnc: the application.
 
+x11vnc: Xlib:  extension "DPMS" missing on display "\S+"\.
+
