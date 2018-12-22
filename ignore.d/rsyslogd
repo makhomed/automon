@@ -9,3 +9,5 @@ kernel: Kernel logging \(proc\) stopped.
 kernel: imklog \d+\.\d+\.\d+, log source = /proc/kmsg started.
 
 rsyslogd: imjournal: journal reloaded... .*
+rsyslogd: sd_journal_get_cursor\(\) failed: 'Cannot assign requested address'.*
+
