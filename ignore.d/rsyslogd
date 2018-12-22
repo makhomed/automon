@@ -8,3 +8,4 @@ rsyslogd: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsy
 kernel: Kernel logging \(proc\) stopped.
 kernel: imklog \d+\.\d+\.\d+, log source = /proc/kmsg started.
 
+rsyslogd: imjournal: journal reloaded... .*
