@@ -8,4 +8,5 @@ chronyd\[\d+\]: Source \S+ replaced with \S+
 chronyd\[\d+\]: Frequency \S+ \+/- \S+ ppm read from /var/lib/chrony/drift
 chronyd\[\d+\]: System clock wrong by \S+ seconds, adjustment started
 chronyd\[\d+\]: System clock was stepped by \S+ seconds
+chronyd\[\d+\]: Received KoD RATE from \S+
 
