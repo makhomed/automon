@@ -1,3 +1,5 @@
 
 systemd-fsck: /sbin/fsck.xfs: XFS file system.
 
+systemd-fsck: /dev/sda1: clean, \S+ files, \S+ blocks
+
