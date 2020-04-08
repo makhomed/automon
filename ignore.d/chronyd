@@ -10,3 +10,5 @@ chronyd\[\d+\]: System clock wrong by \S+ seconds, adjustment started
 chronyd\[\d+\]: System clock was stepped by \S+ seconds
 chronyd\[\d+\]: Received KoD RATE from \S+
 
+chronyd\[\d+\]: Can't synchronise: no majority
+

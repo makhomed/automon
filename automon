@@ -274,6 +274,21 @@ class AutoMon(object):
         if process.failed():
             process.print_info("error")
 
+    def read_dmesg(self, host):
+        if host == "localhost" or host == "127.0.0.1":
+            process = Process("/bin/dmesg")
+        else:
+            if ":" in host:
+                hostname, port = host.rsplit(":", 1)
+            else:
+                hostname, port = host, "22"
+            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/dmesg")
+        if process.failed():
+            print "can't read %s from host %s" % (file_name, host)
+            process.print_info("error")
+            return ""
+        return process.stdout
+
     def read_file(self, host, file_name):
         if host == "localhost" or host == "127.0.0.1":
             process = Process("/bin/cat", file_name)
@@ -290,7 +305,7 @@ class AutoMon(object):
         return process.stdout
 
     def read_messages(self, host):
-        dmesg_content = self.read_file(host, "/var/log/dmesg")
+        dmesg_content = self.read_dmesg(host)
         dmesg_lines = set()
         dmesg_re = re.compile(r"^\[\s*\d+\.\d+\] (?P<rest>.*)$")
         for line in dmesg_content.strip().split("\n"):
