@@ -25,6 +25,7 @@ systemd(\[\d+\])?: Reached target .*
 
 systemd: Reloaded .*
 systemd: Reloading\.
+systemd\[1\]: Reloading.
 systemd: Reexecuting\.
 
 systemd: Reloading .*
