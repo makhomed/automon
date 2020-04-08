@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 
 import argparse
 import datetime
@@ -14,8 +14,8 @@ import uuid
 __author__ = "Gena Makhomed"
 __contact__ = "https://github.com/makhomed/automon"
 __license__ = "GPLv3"
-__version__ = "0.0.2"
-__date__ = "2017-11-22"
+__version__ = "1.1.0"
+__date__ = "2020-04-08"
 
 
 class Config(object):

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 """send alerts via Telegram using https://pypi.python.org/pypi/telegram-send"""
 
@@ -7,8 +7,8 @@ import os.path, sys, subprocess
 __author__ = "Gena Makhomed"
 __contact__ = "https://github.com/makhomed/automon"
 __license__ = "GPLv3"
-__version__ = "0.0.1"
-__date__ = "2017-11-21"
+__version__ = "1.1.0"
+__date__ = "2020-04-08"
 
 
 class Process(object):
