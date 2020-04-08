@@ -42,11 +42,11 @@ def main():
         content = alert_file.read()
     first_line = content.split("\n")[0]
 
-    process = Process("/usr/bin/telegram-send", first_line)
+    process = Process("/usr/local/bin/telegram-send", first_line)
     if process.failed():
         process.print_info("error")
 
-    process = Process("/usr/bin/telegram-send", "--file", alert_file_name)
+    process = Process("/usr/local/bin/telegram-send", "--file", alert_file_name)
     if process.failed():
         process.print_info("error")
 
