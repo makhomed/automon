@@ -2,3 +2,6 @@
 autobackup: \S+ \S+ started
 autobackup: \S+ \S+ finished, \S+
 
+autobackup\[\d+\]: \S+ \S+ started
+autobackup\[\d+\]: \S+ \S+ finished, \S+
+
