@@ -11,60 +11,59 @@ systemd(\[\d+\])?: Created slice .* Slice.
 systemd(\[\d+\])?: Detected virtualization kvm\.
 systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
-systemd: Got automount request for .*, triggered by .*
+systemd(\[\d+\])?: Got automount request for .*, triggered by .*
 
-systemd: Activating swap .*
-systemd: Activated swap .*
+systemd(\[\d+\])?: Activating swap .*
+systemd(\[\d+\])?: Activated swap .*
 
-systemd: Stopping .*
-systemd: Stopped .*
+systemd(\[\d+\])?: Stopping .*
+systemd(\[\d+\])?: Stopped .*
 
 systemd(\[\d+\])?: Starting .*
 systemd(\[\d+\])?: Started .*
 systemd(\[\d+\])?: Reached target .*
 
-systemd: Reloaded .*
-systemd: Reloading\.
-systemd\[1\]: Reloading.
-systemd: Reexecuting\.
+systemd(\[\d+\])?: Reloaded .*
+systemd(\[\d+\])?: Reloading\.
+systemd(\[\d+\])?: Reexecuting\.
 
-systemd: Reloading .*
+systemd(\[\d+\])?: Reloading .*
 
-systemd: Found device .*
-systemd: Mounting .*
-systemd: Mounted .*
-systemd: Unmounting .*
+systemd(\[\d+\])?: Found device .*
+systemd(\[\d+\])?: Mounting .*
+systemd(\[\d+\])?: Mounted .*
+systemd(\[\d+\])?: Unmounting .*
 
-systemd: Time has been changed
+systemd(\[\d+\])?: Time has been changed
 
-systemd: Started Session \d+ of user root\.
-systemd: Starting Session \d+ of user root\.
+systemd(\[\d+\])?: Started Session \d+ of user root\.
+systemd(\[\d+\])?: Starting Session \d+ of user root\.
 
-systemd: Created slice User Slice of \S+\.
-systemd: Starting User Slice of \S+\.
+systemd(\[\d+\])?: Created slice User Slice of \S+\.
+systemd(\[\d+\])?: Starting User Slice of \S+\.
 
-systemd: Started Session \d+ of user \S+\.
-systemd: Starting Session \d+ of user \S+\.
-systemd: Removed slice User Slice of \S+\.
-systemd: Stopping User Slice of \S+\.
+systemd(\[\d+\])?: Started Session \d+ of user \S+\.
+systemd(\[\d+\])?: Starting Session \d+ of user \S+\.
+systemd(\[\d+\])?: Removed slice User Slice of \S+\.
+systemd(\[\d+\])?: Stopping User Slice of \S+\.
 
-systemd: Closed udev Control Socket\.
-systemd: Stopping udev Control Socket\.
-systemd: Closed udev Kernel Socket\.
-systemd: Stopping udev Kernel Socket\.
-systemd: Listening on udev Control Socket\.
-systemd: Starting udev Control Socket\.
-systemd: Listening on udev Kernel Socket\.
-systemd: Starting udev Kernel Socket\.
+systemd(\[\d+\])?: Closed udev Control Socket\.
+systemd(\[\d+\])?: Stopping udev Control Socket\.
+systemd(\[\d+\])?: Closed udev Kernel Socket\.
+systemd(\[\d+\])?: Stopping udev Kernel Socket\.
+systemd(\[\d+\])?: Listening on udev Control Socket\.
+systemd(\[\d+\])?: Starting udev Control Socket\.
+systemd(\[\d+\])?: Listening on udev Kernel Socket\.
+systemd(\[\d+\])?: Starting udev Kernel Socket\.
 
-systemd: Switching root.
-systemd: Created slice .*
-systemd: Received SIGRTMIN\+\d+ from PID \d+ \(plymouthd\).
+systemd(\[\d+\])?: Switching root.
+systemd(\[\d+\])?: Created slice .*
+systemd(\[\d+\])?: Received SIGRTMIN\+\d+ from PID \d+ \(plymouthd\).
 
-systemd: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\) = .*\.
+systemd(\[\d+\])?: Startup finished in \S+ \(kernel\) \+ .* \(initrd\) \+ .* \(userspace\) = .*\.
 
-systemd: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
+systemd(\[\d+\])?: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to add dependency on syslog.target,iptables.service, ignoring: Invalid argument
 
-systemd: Unit virtlockd.service cannot be reloaded because it is inactive.
-systemd: Unit virtlogd.service cannot be reloaded because it is inactive.
+systemd(\[\d+\])?: Unit virtlockd.service cannot be reloaded because it is inactive.
+systemd(\[\d+\])?: Unit virtlogd.service cannot be reloaded because it is inactive.
 
