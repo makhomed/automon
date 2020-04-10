@@ -11,6 +11,9 @@ systemd(\[\d+\])?: Created slice .* Slice.
 systemd(\[\d+\])?: Detected virtualization kvm\.
 systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
+systemd(\[\d+\])?: Unset automount Arbitrary Executable File Formats File System Automount Point.
+systemd(\[\d+\])?: Set up automount Arbitrary Executable File Formats File System Automount Point.
+
 systemd(\[\d+\])?: Got automount request for .*, triggered by .*
 
 systemd(\[\d+\])?: Activating swap .*
