@@ -13,6 +13,7 @@ systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
 systemd(\[\d+\])?: Unset automount Arbitrary Executable File Formats File System Automount Point.
 systemd(\[\d+\])?: Set up automount Arbitrary Executable File Formats File System Automount Point.
+systemd(\[\d+\])?: cgroup compatibility translation between legacy and unified hierarchy settings activated. See cgroup-compat debug messages for details.
 
 systemd(\[\d+\])?: Got automount request for .*, triggered by .*
 
