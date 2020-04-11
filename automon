@@ -284,7 +284,7 @@ class AutoMon(object):
                 hostname, port = host, "22"
             process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/dmesg")
         if process.failed():
-            print "can't read %s from host %s" % (file_name, host)
+            print "can't run '/bin/dmesg' at host %s" % host
             process.print_info("error")
             return ""
         return process.stdout
