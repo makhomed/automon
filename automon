@@ -121,6 +121,8 @@ class Config(object):
             return set()
         ignore_file_names = list()
         for entry in os.listdir(ignore_directory_name):
+            if entry.startswith('.') and entry.endswith('.swp'):
+                continue
             full_name = os.path.join(ignore_directory_name, entry)
             if os.path.isfile(full_name):
                 ignore_file_names.append(full_name)
