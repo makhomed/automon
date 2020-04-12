@@ -1,4 +1,7 @@
 
+kernel: Kernel logging \(proc\) stopped.
+kernel: imklog \d+\.\d+\.\d+, log source = /proc/kmsg started.
+
 kernel: conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
 
 kernel: nr_pdflush_threads exported in /proc is scheduled for removal

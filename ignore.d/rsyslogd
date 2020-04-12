@@ -1,13 +1,10 @@
 
-rsyslogd: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] start
-rsyslogd: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="http://www.rsyslog.com"\] rsyslogd was HUPed
-rsyslogd: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] exiting on signal 15\.
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] start
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="http://www.rsyslog.com"\] rsyslogd was HUPed
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] exiting on signal 15\.
 
-rsyslogd: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsyslog\.com/e/0 \]
+rsyslogd(\[\d+\])?: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsyslog\.com/e/0 \]
+rsyslogd(\[\d+\])?: imjournal: journal reloaded... .*
 
-kernel: Kernel logging \(proc\) stopped.
-kernel: imklog \d+\.\d+\.\d+, log source = /proc/kmsg started.
-
-rsyslogd: imjournal: journal reloaded... .*
-rsyslogd: sd_journal_get_cursor\(\) failed: 'Cannot assign requested address'.*
+rsyslogd(\[\d+\])?: sd_journal_get_cursor\(\) failed: 'Cannot assign requested address'.*
 
