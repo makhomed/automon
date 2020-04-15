@@ -1,12 +1,12 @@
 
-systemd-logind: New session \d+ of user \S+\.
-systemd-logind: Removed session \d+\.
+systemd-logind(\[\d+\])?: New session \d+ of user \S+\.
+systemd-logind(\[\d+\])?: Removed session \d+\.
 
-systemd-logind: Watching system buttons on /dev/input/event\d+ \(Power Button\)
-systemd-logind: New seat seat\d+\.
-systemd-logind: Power key pressed\.
-systemd-logind: Powering Off\.\.\.
-systemd-logind: System is powering down\.
+systemd-logind(\[\d+\])?: Watching system buttons on /dev/input/event\d+ \(Power Button\)
+systemd-logind(\[\d+\])?: New seat seat\d+\.
+systemd-logind(\[\d+\])?: Power key pressed\.
+systemd-logind(\[\d+\])?: Powering Off\.\.\.
+systemd-logind(\[\d+\])?: System is powering down\.
 
-systemd-logind: Failed to abandon session scope: Connection reset by peer
+systemd-logind(\[\d+\])?: Failed to abandon session scope: Connection reset by peer
 
