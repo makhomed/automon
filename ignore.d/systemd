@@ -71,4 +71,7 @@ systemd(\[\d+\])?: \[/usr/lib/systemd/system/ip6tables.service:\d+\] Failed to a
 
 systemd(\[\d+\])?: Unit virtlockd.service cannot be reloaded because it is inactive.
 systemd(\[\d+\])?: Unit virtlogd.service cannot be reloaded because it is inactive.
+systemd(\[\d+\])?: Closed D-Bus User Message Bus Socket.
+systemd(\[\d+\])?: Removed slice User Slice of UID \S+
+systemd(\[\d+\])?: user-runtime-dir@\d+.service: Unit not needed anymore. Stopping.
 
