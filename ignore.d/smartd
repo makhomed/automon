@@ -2,6 +2,7 @@
 smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS returned 129, not ATA compliant, ignoring -n Directive
 smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS spins up disk \(0x81 -> 0xff\)
 smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS spins up disk \(0x82 -> 0xff\)
+smartd\[\d+\]: Device: \S+ \[SAT\], CHECK POWER STATUS spins up disk \(0x81 -> 0x82\)
 
 smartd\[\d+\]: smartd \d+\.\d+ \d\d\d\d-\d\d-\d\d r\d+ .*
 smartd\[\d+\]: Copyright \(C\) \d+-\d+.*smartmontools.*
