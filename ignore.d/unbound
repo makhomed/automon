@@ -4,3 +4,7 @@ unbound: .* unbound\[\S+\] warning: increased limit\(open files\) from \d+ to \d
 unbound: \[\S+\] notice: init module \d+: \S+
 unbound: \[\S+\] info: start of service \(unbound \S+\).
 
+unbound\[\d+\]: \[\S+\] info: generate keytag query .+
+
+unbound\[\d+\]: \[\S+\] error: can't bind socket: Permission denied for 0.0.0.0
+

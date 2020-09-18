@@ -1,3 +1,5 @@
 
 su: \(to \S+\) root on pts/\d+
 
+su\[\d+\]: \(to \S+\) root on pts/\d+
+
