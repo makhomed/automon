@@ -1,7 +1,7 @@
 
-rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] start
-rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="http://www.rsyslog.com"\] rsyslogd was HUPed
-rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\d+" x-info="http://www.rsyslog.com"\] exiting on signal 15\.
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="\S+"\] start
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="\S+"\] rsyslogd was HUPed
+rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="\S+"\] exiting on signal 15\.
 
 rsyslogd(\[\d+\])?: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsyslog\.com/e/0 \]
 rsyslogd(\[\d+\])?: imjournal: journal reloaded... .*

@@ -75,3 +75,7 @@ systemd(\[\d+\])?: Closed D-Bus User Message Bus Socket.
 systemd(\[\d+\])?: Removed slice User Slice of UID \S+
 systemd(\[\d+\])?: user-runtime-dir@\d+.service: Unit not needed anymore. Stopping.
 
+systemd\[\d+\]: dnf-makecache.service: Main process exited, code=exited, status=1/FAILURE
+systemd\[\d+\]: dnf-makecache.service: Failed with result 'exit-code'.
+systemd\[\d+\]: Failed to start dnf makecache.
+
