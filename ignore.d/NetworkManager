@@ -9,6 +9,7 @@ nm-dispatcher: req:\d+ 'up' .*
 
 nm-dispatcher: req:\d+ 'connectivity-change': .*
 
-dbus-daemon\[\d+\]: \[system\] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.6' \(uid=0 pid=1240 comm="/usr/sbin/NetworkManager --no-daemon "\)
 dbus-daemon\[\d+\]: \[system\] Successfully activated service 'org.freedesktop.nm_dispatcher'
+
+dbus-daemon\[\d+\]: \[system\] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by '\S+' \(uid=0 pid=\d+ comm="/usr/sbin/NetworkManager --no-daemon "\)
 
