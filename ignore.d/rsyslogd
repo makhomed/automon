@@ -3,7 +3,8 @@ rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-i
 rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="\S+"\] rsyslogd was HUPed
 rsyslogd(\[\d+\])?: \[origin software="rsyslogd" swVersion="\S+" x-pid="\S+" x-info="\S+"\] exiting on signal 15\.
 
-rsyslogd(\[\d+\])?: imjournal: journal reloaded\.\.\. \[v\d+\.\d+\.\d+ try http://www\.rsyslog\.com/e/0 \]
+rsyslogd(\[\d+\])?: imjournal: journal reloaded\.\.\. \[v\S+ try \S+ \]
+
 rsyslogd(\[\d+\])?: imjournal: journal reloaded... .*
 
 rsyslogd(\[\d+\])?: sd_journal_get_cursor\(\) failed: 'Cannot assign requested address'.*
