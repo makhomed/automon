@@ -12,5 +12,7 @@ libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d.\d\d\d\d: \d+: info : hostna
 libvirt-guests.sh: Resuming guests on default URI...
 libvirt-guests.sh: Resuming guest .*: already active
 
+libvirt-guests.sh\[\d+\]: Resuming guest .*: already active
+
 libvirtd\[\d+\]: .*
 

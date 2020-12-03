@@ -79,3 +79,5 @@ systemd\[\d+\]: dnf-makecache.service: Main process exited, code=exited, status=
 systemd\[\d+\]: dnf-makecache.service: Failed with result 'exit-code'.
 systemd\[\d+\]: Failed to start dnf makecache.
 
+systemd\[\d+\]: Failed to connect to API bus: Connection refused
+
