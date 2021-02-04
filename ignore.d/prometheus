@@ -1,3 +1,5 @@
 
 prometheus\[\d+\]: .*
 
+node_exporter\[\d+\]: .*
+
