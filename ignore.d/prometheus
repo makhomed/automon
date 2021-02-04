@@ -3,3 +3,5 @@ prometheus\[\d+\]: .*
 
 node_exporter\[\d+\]: .*
 
+grafana-server\[\d+\]: .*
+
