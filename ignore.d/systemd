@@ -11,6 +11,8 @@ systemd(\[\d+\])?: Startup finished in \S+
 
 systemd\[\d+\]: session-\d+.scope: Succeeded.
 
+systemd\[\d+\]: systemd-tmpfiles-clean.service: Succeeded.
+
 systemd(\[\d+\])?: Detected virtualization kvm\.
 systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
