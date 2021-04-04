@@ -13,3 +13,5 @@ dbus-daemon\[\d+\]: \[system\] Successfully activated service 'org.freedesktop.n
 
 dbus-daemon\[\d+\]: \[system\] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by '\S+' \(uid=0 pid=\d+ comm="/usr/sbin/NetworkManager --no-daemon "\)
 
+NetworkManager\[\d+\]: .*
+
