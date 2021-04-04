@@ -9,6 +9,8 @@ systemd(\[\d+\])?: Running in initial RAM disk.
 systemd(\[\d+\])?: Created slice .* Slice.
 systemd(\[\d+\])?: Startup finished in \S+
 
+systemd\[\d+\]: session-\d+.scope: Succeeded.
+
 systemd(\[\d+\])?: Detected virtualization kvm\.
 systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
