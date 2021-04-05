@@ -13,6 +13,8 @@ systemd\[\d+\]: session-\d+.scope: Succeeded.
 
 systemd\[\d+\]: systemd-tmpfiles-clean.service: Succeeded.
 
+systemd\[\d+\]: user@0.service: Killing process .* with signal SIGKILL.
+
 systemd(\[\d+\])?: Detected virtualization kvm\.
 systemd(\[\d+\])?: Initializing machine ID from KVM UUID.
 
