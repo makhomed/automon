@@ -8,3 +8,5 @@ journal: Suppressed \d+ messages from /user.slice/user-0.slice
 
 journal: gdkproperty-x11.c:325 invalid X atom: 292
 
+journal: Suppressed \d+ messages from /system.slice/nsd.service
+

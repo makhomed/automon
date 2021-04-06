@@ -23,3 +23,7 @@ nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: axfr for \S
 nsd\[\d+\]: zone \S+ serial \d+ is updated to \d+
 nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: info: zone \S+ serial \d+ is updated to \d+
 
+nsd\[\d+\]: .*
+
+nsd: \[\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\] nsd\[\d+\]: .*
+

@@ -101,5 +101,5 @@ systemd\[\d+\]: dbus.socket: Succeeded.
 
 systemd\[\d+\]: grub-boot-success.timer: Succeeded.
 
-systemd: Can't open PID file /var/run/dovecot/master.pid .* No such file or directory
+systemd(\[\d+\])?: Can't open PID file /var/run/dovecot/master.pid .*
 
