@@ -10,3 +10,5 @@ unbound\[\d+\]: \[\S+\] error: can't bind socket: Permission denied for 0.0.0.0
 
 unbound: \[\S+\] info: validation failure .*
 
+systemd\[\d+\]: unbound-anchor.service: Succeeded.
+

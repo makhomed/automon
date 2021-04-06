@@ -87,3 +87,19 @@ systemd\[\d+\]: Failed to start dnf makecache.
 
 systemd\[\d+\]: Failed to connect to API bus: Connection refused
 
+systemd\[\d+\]: sysstat-summary.service: Succeeded.
+
+systemd\[\d+\]: user@\d+.service: Succeeded.
+
+systemd\[\d+\]: user-runtime-dir@\d+.service: Succeeded.
+
+systemd\[\d+\]: run-user-\d+.mount: Succeeded.
+
+systemd\[\d+\]: fstrim.service: Succeeded.
+
+systemd\[\d+\]: dbus.socket: Succeeded.
+
+systemd\[\d+\]: grub-boot-success.timer: Succeeded.
+
+systemd: Can't open PID file /var/run/dovecot/master.pid .* No such file or directory
+
