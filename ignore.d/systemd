@@ -105,3 +105,6 @@ systemd\[\d+\]: grub-boot-success.service: Succeeded.
 
 systemd(\[\d+\])?: Can't open PID file /var/run/dovecot/master.pid .*
 
+systemd\[\d+\]: man-db-cache-update.service: Succeeded.
+systemd\[\d+\]: run-.*.service: Succeeded.
+
