@@ -108,5 +108,5 @@ systemd(\[\d+\])?: Can't open PID file /var/run/dovecot/master.pid .*
 systemd\[\d+\]: man-db-cache-update.service: Succeeded.
 systemd\[\d+\]: run-.*.service: Succeeded.
 
-systemd\[\d+\]: mysqld.service: Succeeded.
+systemd\[\d+\]: .*.service: Succeeded.
 
