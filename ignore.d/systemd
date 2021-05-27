@@ -110,3 +110,5 @@ systemd\[\d+\]: run-.*.service: Succeeded.
 
 systemd\[\d+\]: .*.service: Succeeded.
 
+systemd\[\d+\]: Removed slice .*
+
