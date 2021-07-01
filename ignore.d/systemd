@@ -112,3 +112,5 @@ systemd\[\d+\]: .*.service: Succeeded.
 
 systemd\[\d+\]: Removed slice .*
 
+systemd\[\d+\]: .*\.mount: Succeeded.
+
