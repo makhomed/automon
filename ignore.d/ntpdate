@@ -1,3 +1,4 @@
 
 ntpdate\[\d+\]: adjust time server \S+ offset .*
+ntpdate\[\d+\]: \S+ rate limit response from server.
 
