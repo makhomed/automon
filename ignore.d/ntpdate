@@ -1,0 +1,3 @@
+
+ntpdate\[\d+\]: adjust time server \S+ offset .*
+
