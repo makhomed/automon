@@ -1,0 +1,7 @@
+#!/bin/bash
+
+systemctl restart automon
+
+sleep 0.3
+
+systemctl status automon
