@@ -2,5 +2,8 @@
 kcm\[\d+\]: Starting up
 kcm\[\d+\]: Shutting down \(status = 0\)
 
+sssd_kcm\[\d+\]: Shutting down \(status = 0\)
+sssd_kcm\[\d+\]: Starting up
+
 systemd\[\d+\]: sssd-kcm.service: Succeeded.
 
