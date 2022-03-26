@@ -1,0 +1,3 @@
+
+systemd\[\d+\]: proc-sys-fs-binfmt_misc.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by \d+ .*
+
