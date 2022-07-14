@@ -7,8 +7,8 @@ import os.path, sys, subprocess
 __author__ = "Gena Makhomed"
 __contact__ = "https://github.com/makhomed/automon"
 __license__ = "GPLv3"
-__version__ = "1.1.0"
-__date__ = "2020-04-08"
+__version__ = "1.2.0"
+__date__ = "2022-07-15"
 
 
 class Process(object):
@@ -42,14 +42,14 @@ def main():
         content = alert_file.read()
     first_line = content.split("\n")[0]
 
-    process = Process("/usr/local/bin/telegram-send", first_line)
-    if process.failed():
-        process.print_info("error")
-
-    process = Process("/usr/local/bin/telegram-send", "--file", alert_file_name)
-    if process.failed():
-        process.print_info("error")
+    if len(content) < 4096:
+        process = Process("/bin/bash", "-c", "cat %s | /usr/local/bin/telegram-send --pre --stdin" % alert_file_name)
+        if process.failed():
+            process.print_info("error")
+    else:
+        process = Process("/usr/local/bin/telegram-send", first_line, "--disable-web-page-preview", "--file", alert_file_name)
+        if process.failed():
+            process.print_info("error")
 
 if __name__ == "__main__":
     main()
-
