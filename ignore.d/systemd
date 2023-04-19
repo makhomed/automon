@@ -1,4 +1,11 @@
 
+systemd(\[\d+\])?: session-\d+.scope: Consumed \S+ CPU time.
+systemd(\[\d+\])?: session-\d+.scope: Deactivated successfully.
+systemd(\[\d+\])?: \S+.service: Deactivated successfully.
+systemd(\[\d+\])?: Finished Cleanup of Temporary Directories.
+systemd(\[\d+\])?: Finished system activity accounting tool.
+systemd(\[\d+\])?: Finished dnf makecache.
+
 systemd(\[\d+\])?: systemd \d+ running in system mode\. .*
 systemd(\[\d+\])?: Detected architecture \S+\.
 systemd(\[\d+\])?: Inserted module '.*'
