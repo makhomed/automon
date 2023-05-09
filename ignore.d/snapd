@@ -1,0 +1,3 @@
+
+systemd\[\d+\]: Closed REST API socket for snapd user session agent.
+
