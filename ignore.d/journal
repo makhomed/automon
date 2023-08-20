@@ -1,12 +1,21 @@
 
-journal: Journal started
-journal: Journal stopped
-journal: Runtime journal is using \d+\.\d+.*
-
-journal: Error opening /dev/dri/card0: No such file or directory
-journal: Suppressed \d+ messages from /user.slice/user-0.slice
-
-journal: gdkproperty-x11.c:325 invalid X atom: 292
-
-journal: Suppressed \d+ messages from /system.slice/nsd.service
+journal(\[\d+\])?: Acquired the name \S+ on the system message bus
+journal(\[\d+\])?: End of file while reading data: Input/output error
+journal(\[\d+\])?: Error opening \S+ No such file or directory
+journal(\[\d+\])?: gdkproperty-x11.c:\d+ invalid X atom: \d+
+journal(\[\d+\])?: g_hash_table_unref: assertion 'hash_table != NULL' failed
+journal(\[\d+\])?: g_variant_new_string: assertion 'string != NULL' failed
+journal(\[\d+\])?: hostname: \S+
+journal(\[\d+\])?: Journal started
+journal(\[\d+\])?: Journal stopped
+journal(\[\d+\])?: libvirt version:.*
+journal(\[\d+\])?: Name '\S+' lost on the message dbus.
+journal(\[\d+\])?: Name \S+ lost on the message dbus, exiting.
+journal(\[\d+\])?: Ready
+journal(\[\d+\])?: Runtime journal is using \d+\.\d+.*
+journal(\[\d+\])?: Suppressed \d+ messages from /system.slice/nsd.service
+journal(\[\d+\])?: Suppressed \d+ messages from /user.slice/user-\s+.slice
+journal(\[\d+\])?: udisks daemon version \S+ starting
+journal(\[\d+\])?: Unable to get XDG user directory path for special directory \S+ Ignoring this location.
+journal(\[\d+\])?: Unsupported GL renderer.*
 

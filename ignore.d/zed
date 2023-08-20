@@ -1,4 +1,9 @@
 
+zed(\[\d+\])?: eid=\d+ class=trim_start pool='\S+' vdev=\S+ vdev_state=ONLINE
+zed(\[\d+\])?: eid=\d+ class=trim_finish pool='\S+' vdev=\S+ vdev_state=ONLINE
+zed(\[\d+\])?: eid=\d+ class=scrub_start pool='\S+'
+zed(\[\d+\])?: eid=\d+ class=scrub_finish pool='\S+'
+
 zed: ZFS Event Daemon \d+\.\d+\.\d+-\d+ \(PID \d+\)
 zed: Processing events since eid=\d+
 zed: eid=\d+ class=history_event pool_guid=\S+
@@ -9,4 +14,10 @@ zed: Exiting
 zed\[\d+\]: Invoking "all-syslog\.sh" eid=\d+ pid=\d+
 zed\[\d+\]: Finished "all-syslog\.sh" eid=\d+ pid=\d+ exit=0
 zed\[\d+\]: Found PID \d+ bound to PID file .*
+
+zed(\[\d+\])?: ZFS Event Daemon .+
+zed(\[\d+\])?: Processing events since eid=\d+
+zed(\[\d+\])?: eid=\d+ class=pool_import pool='\S+'
+zed(\[\d+\])?: eid=\d+ class=config_sync pool='\S+'
+zed(\[\d+\])?: vdev .+ doesn't exist
 

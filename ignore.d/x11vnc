@@ -1,36 +1,36 @@
 
-x11vnc: The VNC desktop is:\s+\S+
-x11vnc: PORT=\d+
-x11vnc: trying N=\d+ ...
-x11vnc: redir_daemon=
-x11vnc: /usr/bin/Xvfb :\d+ -screen \d+ \d+x\d+x\d+ -cc \d+ -nolisten tcp -auth .*
-x11vnc: /usr/bin/xinit /usr/bin/startxfce4 -- /usr/bin/Xvfb :\d+ -screen \d+ \S+ -cc \d+ -nolisten tcp -auth \S+
-x11vnc: /usr/bin/startxfce4: X server already running on display :\d+
-x11vnc: /usr/bin/xinit: XFree86_VT property unexpectedly has \d+ items instead of \d+
-x11vnc: generating cookie with syscall
-x11vnc: /usr/bin/xinit: connection to X server lost
-x11vnc: waiting for X server to shut down .*
+journal(\[\d+\])?: Disconnected from session manager.
+journal(\[\d+\])?: ICE I/O Error
+libvirtd(\[\d+\])?: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d.\d+\+\d+: \d+: error : virNetSocketReadWire:\d+ : End of file while reading data: Input/output error
+systemd(\[\d+\])?: Unit x11vnc.service entered failed state\.
+systemd(\[\d+\])?: x11vnc.service failed.
+systemd(\[\d+\])?: x11vnc.service: Failed with result 'exit-code'.
+systemd(\[\d+\])?: x11vnc.service holdoff time over, scheduling restart.
+systemd(\[\d+\])?: x11vnc.service: main process exited, code=exited, status=\S+
+systemd(\[\d+\])?: x11vnc.service: Main process exited, code=exited, status=\S+
+systemd(\[\d+\])?: x11vnc.service: Scheduled restart job, restart counter is at \S+
+x11vnc(\[\d+\])?: caught signal: \S+
+x11vnc(\[\d+\])?: extra\[\d+\] signal: \S+
+x11vnc(\[\d+\])?: generating cookie with syscall
+x11vnc(\[\d+\])?: most likely the X server was shut down or you killed/destroyed
+x11vnc(\[\d+\])?: OK
+x11vnc(\[\d+\])?: PORT=\d+
+x11vnc(\[\d+\])?: redir_daemon=
+x11vnc(\[\d+\])?: \S+: Fatal IO error \d+.*
+x11vnc(\[\d+\])?: the application.
+x11vnc(\[\d+\])?: The application '\S+' lost its connection to the display \S+;
+x11vnc(\[\d+\])?: The VNC desktop is:\s+\S+
+x11vnc(\[\d+\])?: trying N=\d+ ...
+x11vnc(\[\d+\])?: /usr/bin/startxfce4: X server already running on display :\d+
+x11vnc(\[\d+\])?: /usr/bin/xinit: connection to X server lost
+x11vnc(\[\d+\])?: /usr/bin/xinit /usr/bin/startxfce4 -- /usr/bin/Xvfb :\d+ -screen \d+ \S+ -cc \d+ -nolisten tcp -auth \S+
+x11vnc(\[\d+\])?: /usr/bin/xinit: XFree86_VT property unexpectedly has \d+ items instead of \d+
+x11vnc(\[\d+\])?: /usr/bin/Xvfb :\d+ -screen.+
+x11vnc(\[\d+\])?: waiting for X server to shut down .*
+x11vnc(\[\d+\])?: Working directory .+ does not exist. It won't be used when spawning "virt-manager".
+x11vnc(\[\d+\])?: xfdesktop: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.\d+\.
+x11vnc(\[\d+\])?: xfsettingsd: Another instance took over. Leaving...
+x11vnc(\[\d+\])?: Xlib:  extension "DPMS" missing on display "\S+"\.
 
-x11vnc: \S+: Fatal IO error 11 \(Resource temporarily unavailable\) on X server \S+
-x11vnc: \S+: Fatal IO error 104 \(Connection reset by peer\) on X server \S+
-x11vnc: \S+: Fatal IO error 4 \(Interrupted system call\) on X server \S+
 
-journal: ICE I/O Error
-x11vnc: caught signal: 15
-x11vnc: extra\[\d+\] signal: -1
-journal: Disconnected from session manager.
-systemd: x11vnc.service: main process exited, code=exited, status=4/NOPERMISSION
-x11vnc: xfdesktop: Fatal IO error 11 \(Resource temporarily unavailable\) on X server :\d+\.\d+\.
-libvirtd: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d.\d+\+\d+: \d+: error : virNetSocketReadWire:\d+ : End of file while reading data: Input/output error
-systemd: Unit x11vnc.service entered failed state\.
-systemd: x11vnc.service failed.
-systemd: x11vnc.service holdoff time over, scheduling restart.
-systemd: x11vnc.service: main process exited, code=exited, status=2/INVALIDARGUMENT
-systemd: x11vnc.service: main process exited, code=exited, status=3/NOTIMPLEMENTED
-
-x11vnc: The application '\S+' lost its connection to the display \S+;
-x11vnc: most likely the X server was shut down or you killed/destroyed
-x11vnc: the application.
-
-x11vnc: Xlib:  extension "DPMS" missing on display "\S+"\.
 

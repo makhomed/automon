@@ -1,0 +1,23 @@
+
+dbus-daemon(\[\d+\])?: \[.+\] Successfully activated service '\S+'
+
+dbus-daemon: dbus\[\d+\]: \[system\] Activating via systemd: service name='.*' unit='.*'
+dbus-daemon: dbus\[\d+\]: \[system\] Reloaded configuration
+dbus-daemon: dbus\[\d+\]: \[system\] Successfully activated service '.*'
+
+dbus-daemon\[\d+\]: \[system\] Activating via systemd: .*
+dbus-daemon\[\d+\]: \[system\] Reloaded configuration
+dbus-daemon\[\d+\]: \[system\] Successfully activated service .*
+
+dbus\[\d+\]: \[system\] Activating via systemd: service name='.*' unit='.*'
+dbus\[\d+\]: \[system\] Reloaded configuration
+dbus\[\d+\]: \[system\] Successfully activated service '.*'
+
+org.a11y.atspi.Registry: \S+ daemon is running with well-known name.+
+org.a11y.Bus: Activating service name='\S+'
+org.a11y.Bus: Successfully activated service '\S+'
+
+dbus-daemon(\[\d+\])?: \[.+\] Activating service name='\S+' requested by .+
+org.a11y.Bus(\[\d+\])?: dbus-daemon(\[\d+\])?: Activating service name='\S+' requested by .+
+org.a11y.Bus(\[\d+\])?: dbus-daemon(\[\d+\])?: Successfully activated service '\S+'
+

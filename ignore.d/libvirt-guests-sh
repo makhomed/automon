@@ -1,0 +1,5 @@
+
+libvirt-guests.sh(\[\d+\])?: already active
+libvirt-guests.sh(\[\d+\])?: Resuming guest .+
+libvirt-guests.sh(\[\d+\])?: Resuming guests on default URI...
+

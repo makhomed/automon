@@ -1,3 +1,11 @@
 
-systemd-journald\[\d+\]: Received SIGTERM from PID 1 .*
+systemd\[\d+\]: systemd-journald.service: Scheduled restart job, restart counter is at \S+
+
+systemd-journald(\[\d+\])?: Data hash table of .+
+systemd-journald(\[\d+\])?: Journal started
+systemd-journald(\[\d+\])?: Journal stopped
+systemd-journald(\[\d+\])?: Received client request to flush runtime journal.
+systemd-journald(\[\d+\])?: Received SIGTERM from PID 1 .*
+systemd-journald(\[\d+\])?: Runtime Journal .*
+systemd-journald(\[\d+\])?: \S+ Journal header limits reached or header out-of-date, rotating.
 

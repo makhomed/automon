@@ -1,4 +1,11 @@
 
+systemd\[\d+\]: Unbound Control Key And Certificate Generator was skipped because no trigger condition checks were met.
+unbound-checkconf\[\d+\]: unbound-checkconf: no errors in /etc/unbound/unbound.conf
+bash\[\d+\]: Updates of root keys with unbound-anchor is disabled
+
+unbound\[\d+\]: \[\S+\] info: .*
+unbound\[\d+\]: \[\S+\] notice: .*
+
 unbound-checkconf: unbound-checkconf: no errors in /etc/unbound/unbound.conf
 unbound: .* unbound\[\S+\] warning: increased limit\(open files\) from \d+ to \d+
 unbound: \[\S+\] notice: init module \d+: \S+
