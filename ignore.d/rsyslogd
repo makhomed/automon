@@ -8,3 +8,5 @@ rsyslogd(\[\d+\])?: imjournal: journal files changed, reloading\.\.\. .*
 
 rsyslogd(\[\d+\])?: sd_journal_get_cursor\(\) failed: 'Cannot assign requested address'.*
 
+systemd(\[\d+\]): rsyslog.service: Sent signal SIGHUP to main process \d+ \(rsyslogd\) on client request.
+

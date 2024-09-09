@@ -1,3 +1,5 @@
 
 fstrim\[\d+\]: .*
 
+systemd(\[\d+\]): Finished Discard unused blocks on filesystems from /etc/fstab.
+
