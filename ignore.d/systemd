@@ -7,7 +7,7 @@ systemd(\[\d+\])?: Finished Generate a daily summary of process accounting.
 
 systemd(\[\d+\])?: Finished Cleanup of User's Temporary Files and Directories.
 
-systemd(\[\d+\])?: \S+: Consumed \S+ CPU time.
+systemd(\[\d+\])?: \S+: Consumed .+ CPU time.
 
 systemd(\[\d+\])?: PipeWire PulseAudio was skipped because of an unmet condition check \(ConditionUser=!root\).
 systemd(\[\d+\])?: Finished Create User's Volatile Files and Directories.
