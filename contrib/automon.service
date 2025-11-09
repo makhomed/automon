@@ -1,0 +1,12 @@
+[Unit]
+Description=automon
+After=network-online.target
+
+[Service]
+ExecStart=/opt/automon/automon -c /opt/automon/automon-daemon.conf daemon
+Restart=always
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
+
