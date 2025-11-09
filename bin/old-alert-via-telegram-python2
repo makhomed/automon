@@ -1,32 +1,21 @@
-#!/usr/bin/python3 -u
+#!/usr/bin/python2
 
-"""send alerts via Telegram using https://pypi.org/project/telegram-send"""
+"""send alerts via Telegram using https://pypi.python.org/pypi/telegram-send"""
 
-import os
-import os.path
-import sys
-import subprocess
+import os.path, sys, subprocess
 
-__license__ = "GNU Affero General Public License, version 3.0 or later"
+__author__ = "Gena Makhomed"
 __contact__ = "https://github.com/makhomed/automon"
-__version__ = "2.0.0"
-__date__ = "2025-11-09"
+__license__ = "GPLv3"
+__version__ = "1.2.0"
+__date__ = "2022-07-15"
 
 
 class Process(object):
+
     def __init__(self, *args):
         self.args = args
-        process = subprocess.Popen(
-            args,
-            stdin=None,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            close_fds=True,
-            cwd='/',
-            text=True,
-            encoding='utf-8',
-            errors='replace',
-        )
+        process = subprocess.Popen(args, stdin=None, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True, cwd='/')
         self.stdout, self.stderr = process.communicate()
         self.returncode = process.returncode
 
@@ -34,13 +23,14 @@ class Process(object):
         return self.returncode != 0
 
     def print_info(self, message):
-        print(f"{message}: Process({self.args}) failed")
-        print("returncode:", self.returncode)
-        print("stdout:", self.stdout)
-        print("stderr:", self.stderr)
+        print message + ": Process(", self.args, ") failed"
+        print "returncode:", self.returncode
+        print "stdout:", self.stdout
+        print "stderr:", self.stderr
 
 
 def main():
+
     if len(sys.argv[1:]) != 1:
         sys.exit("usage: /opt/automon/bin/alert </path/to/alert-file>")
 
@@ -48,19 +38,18 @@ def main():
     if not os.path.isfile(alert_file_name):
         sys.exit("file %s not exists" % alert_file_name)
 
-    with open(alert_file_name, encoding="utf-8") as alert_file:
+    with open(alert_file_name) as alert_file:
         content = alert_file.read()
-    first_line = content.split("\n", 1)[0]
+    first_line = content.split("\n")[0]
 
     if len(content) < 4096:
-        process = Process("/bin/bash", "-c", f"cat {alert_file_name} | /usr/local/bin/telegram-send --pre --stdin")
+        process = Process("/bin/bash", "-c", "cat %s | /usr/local/bin/telegram-send --pre --stdin" % alert_file_name)
         if process.failed():
             process.print_info("error")
     else:
         process = Process("/usr/local/bin/telegram-send", first_line, "--disable-web-page-preview", "--file", alert_file_name)
         if process.failed():
             process.print_info("error")
-
 
 if __name__ == "__main__":
     main()
