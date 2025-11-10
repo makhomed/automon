@@ -1,3 +1,6 @@
 
 /usr/sbin/irqbalance: Balancing is ineffective on systems with a single cpu.  Shutting down
 
+irqbalance(\[\d+\])?: Cannot change IRQ \d+ affinity: Permission denied
+irqbalance(\[\d+\])?: IRQ \d+ affinity is now unmanaged
+
