@@ -1,5 +1,7 @@
 
 systemd(\[\d+\])?: run-credentials-systemd\\x2dtmpfiles\\x2dclean.service.mount: Deactivated successfully.
+systemd(\[\d+\])?: grub-boot-success.timer - .*
+
 systemd(\[\d+\])?: Finished man-db-cache-update.service.
 systemd(\[\d+\])?: Finished \S+.service - .*
 
