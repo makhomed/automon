@@ -1,5 +1,6 @@
 
 systemd(\[\d+\])?: run-credentials-systemd\\x2dtmpfiles\\x2dclean.service.mount: Deactivated successfully.
+systemd(\[\d+\])?: Finished man-db-cache-update.service.
 systemd(\[\d+\])?: Finished \S+.service - .*
 
 systemd(\[\d+\])?: \S+.service: Consumed \S+ CPU time, \S+ memory peak.
