@@ -1,6 +1,7 @@
 
 chronyd\[\d+\]: chronyd version \d+\.\d+ starting \(.*\)
 chronyd\[\d+\]: chronyd exiting
+chronyd\[\d+\]: Loaded seccomp filter \(level 2\)
 
 chronyd\[\d+\]: Selected source .*
 chronyd\[\d+\]: Source .* replaced with .*
@@ -12,3 +13,6 @@ chronyd\[\d+\]: Received KoD RATE from \S+
 
 chronyd\[\d+\]: Can't synchronise: no majority
 
+chronyd\[\d+\]: Can't synchronise: no majority \(no agreement among 3 sources\)
+chronyd\[\d+\]: Can't synchronise: no majority \(only 2 of 4 sources agree\)
+chronyd\[\d+\]: Detected falseticker \S+ \(\d+.rocky.pool.ntp.org\)

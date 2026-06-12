@@ -1,0 +1,6 @@
+
+systemd(\[\d+\])?: Activating special unit exit.target...
+systemd(\[\d+\])?: Closed dbus.socket - D-Bus User Message Bus Socket.
+systemd(\[\d+\])?: Queued start job for default target default.target.
+systemd(\[\d+\])?: user-0.slice: Consumed \S+ CPU time, \S+ memory peak.
+

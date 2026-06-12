@@ -1,4 +1,8 @@
 
+systemd(\[\d+\])?: Startup finished in \S+ \(firmware\) \+ \S+ \(loader\) \+ \S+ \(kernel\) \+ \S+ \(initrd\) \+ .+ \(userspace\) = .+
+
+systemd(\[\d+\])?: session-\d+.scope: Consumed \S+ CPU time, \S+ memory peak.
+
 systemd(\[\d+\])?: run-credentials-systemd\\x2dtmpfiles\\x2dclean.service.mount: Deactivated successfully.
 systemd(\[\d+\])?: grub-boot-success.timer - .*
 
