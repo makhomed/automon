@@ -283,15 +283,24 @@ class AutoMon(object):
         if process.failed():
             process.print_info("error")
 
-    def read_dmesg(self, host):
-        if host == "localhost" or host == "127.0.0.1":
-            process = Process("/bin/dmesg")
+    @staticmethod
+    def _split_host(host):
+        if host.startswith('['):
+            end = host.index(']')
+            hostname = host[1:end]
+            rest = host[end + 1:]
+            port = rest[1:] if rest.startswith(':') else "22"
+        elif host.count(':') > 1:
+            hostname, port = host, "22"
+        elif ':' in host:
+            hostname, port = host.rsplit(':', 1)
         else:
-            if ":" in host:
-                hostname, port = host.rsplit(":", 1)
-            else:
-                hostname, port = host, "22"
-            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/dmesg")
+            hostname, port = host, "22"
+        return hostname, port
+
+    def read_dmesg(self, host):
+        hostname, port = self._split_host(host)
+        process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/dmesg")
         if process.failed():
             print("can't run '/bin/dmesg' at host %s" % host)
             process.print_info("error")
@@ -299,14 +308,8 @@ class AutoMon(object):
         return process.stdout
 
     def read_file(self, host, file_name):
-        if host == "localhost" or host == "127.0.0.1":
-            process = Process("/bin/cat", file_name)
-        else:
-            if ":" in host:
-                hostname, port = host.rsplit(":", 1)
-            else:
-                hostname, port = host, "22"
-            process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/cat", file_name)
+        hostname, port = self._split_host(host)
+        process = Process("/usr/bin/ssh", "-p", port, hostname, "/bin/cat", file_name)
         if process.failed():
             print("can't read %s from host %s" % (file_name, host))
             process.print_info("error")
